@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="baidu_ssp_verify" content="39f14c78c537175eb4b5192c72d002c1" />
+<meta name="baidu-site-verification" content="cNhJHKEzsD" />
+<meta name="360-site-verification" content="e37aef53e3922913e2a6a4682e479b84" />
+<meta name="sogou_site_verification" content="7zFjYjJaMq"/>
+<meta name="msvalidate.01" content="0CA3171633345524D8CBED5E95C75FFF" />
+<meta name="google-site-verification" content="rh2irYN2Lu028orAseOD3aXd5u7Eu1mqTfhoVaw2Ihg" />
+<meta name="shenma-site-verification" content="12da4afc02bfe908ed0667f287167d11_1555581349" />
+<meta property="qc:admins" content="27354635321361636375" />
+<link rel="canonical" href="https://music.163.com/discover/toplist?id=19723756">
+<meta name="applicable-device" content="pc">
+<title>云音乐飙升榜 - 排行榜 - 网易云音乐</title>
+<meta name="keywords" content="云音乐飙升榜，排行榜，榜单，网易云音乐" />
+<meta name="description" content="云音乐飙升榜为你提供最权威最及时的榜单，最近更新：04月07日（每天更新）" />
+<meta property="og:title" content="云音乐飙升榜 - 排行榜 - 网易云音乐" />
+<meta property="og:site_name" content="网易云音乐"/>
+<script type="text/javascript">
+var GDownloadLink="";
+var GDevice = "phone";
+var GFrom="";
+var GClient="";
+var GPlatform="other";
+var GRef = '';
+var GInApp = false;
+var GMobile = false;
+var GAbroad = false;
+var GUser={};
+var GAllowRejectComment = false;
+var GEnc = true;
+var GEnvType = "online";
+var GWebpSupport = "1";
+var vipWebCashierRedirect = "1"
+window.NEJ_CONF = {p_csrf:{cookie:'__csrf',param:'csrf_token'}};
+GUtil = {
+getBase:function(){
+return location.protocol+'//'+location.hostname;
+},
+getPathAndHash:function(_url){//获取URL path 之后的所有内容,并将/#/替换成/m/使之成为path的一部分
+if(!_url) return '';
+var _reg0 = /^https?:\/\/.*?\//i,
+_reg1 = /\/?#\/?/i;
+return _url.replace(_reg0,'/').replace(_reg1,'/m/');
+},
+composeRefer:function(_url,_ref){//对所有的页面请求都加上ref参数表示被嵌套的来源
+if(!_ref) return _url;
+var _hi = _url.indexOf('#'),
+_si = _url.indexOf('?');
+if(_si>0&&(_si<_hi||_hi<0)){
+return _url.substring(0,_si+1)+'ref='+_ref+'&'+_url.substring(_si+1);
+}else if(_hi>0&&(_si<0||_si>_hi)){
+return _url.substring(0,_hi)+'?ref='+_ref+_url.substring(_hi);
+}else{
+return _url+'?ref='+_ref;
+}
+}
+};(function(){
+var _ua = window.navigator.userAgent,
+_isMobile = /(mobile|mobi|wap|iphone)/i.test(_ua),
+_isAndroid = /android/i.test(_ua),
+_isIpad = /(ipad)/i.test(_ua),
+_igList = [/^\/xiami$/,/^\/live$/],//不需要以单页面打开的列表，比如某些活动页面
+_pn = location.pathname,
+_idx = _pn.lastIndexOf('/'),
+_pReg = /\s*(\w+)\s*=\s*(\d+)\s*/,
+_redirect2mobile = function() {
+var _type,_murl,
+_id = 0,
+_hash = location.hash,
+_mReg = /^#\/?m?\/(share|song|playlist|djradio|dj|program|album|mv|artist|topic|radio|zysf|drqp|qp|activity|store|user|event|video|discover\/toplist)(\/(\d+))?/,
+_base = location.protocol+'//'+location.hostname,
+_sindex = _hash.lastIndexOf('?'),
+_search = _sindex>-1?_hash.substring(_sindex+1):'',
+_match = _mReg.exec(_hash);
+// 用户等级页特殊处理
+if (_hash === '#/user/level') {
+location.href = _base + '/store/m/gain/mylevel';
+return;
+}
+// 无hash || 不匹配 || 匹配但是商品之外不带参数 || 匹配且是排行榜
+if (!_hash.length || !_match || (_match[1] != 'store' && !_search) || /share|discover\/toplist/.test(_match[1])) {
+// 有hash && (没有参数 || 排行榜)
+if ((!_search || /share|discover\/toplist/.test(_match[1])) && _hash.length) {
+location.href = _base + '/' + _hash.replace('#', 'm');
+} else {
+location.href = _base + '/m/';
+}
+return;
+}
+_type = _match[1];
+_id = _match[3];
+if (_type == 'dj') _type = 'program';
+if (_type == 'store') {
+_murl = /^#\/store\/(product|concert)\/detail/.test(_hash) ? _hash.replace('#/store', '/store/m') : '/store/m/product/index';
+} else {
+_murl = '/' + _type + '?' + (_id ? 'id=' + _id + '&' : '') + _search;
+}
+location.href = _base + _murl;
+};
+if(_isMobile || _isAndroid || _isIpad){
+_redirect2mobile();
+return;
+}
+if(!_pn||_pn=='/') return;
+for(var i in _igList){
+if(_igList[i].test(_pn)) return;
+}
+if(top==self){
+location.href = '/#'+GUtil.getPathAndHash(location.href);
+return;
+}
+//搜索引擎过来的内容页连接
+if(top==self&&/^\/static\/(song|playlist|album|artist)/i.test(_pn)){
+location.href = '/#'+_pn.substring(0,_idx).replace('/static/','/')+'?id='+_pn.substring(_idx+1);
+}
+})();
+(function(){
+var _addEvent = function(_node,_type,_cb){
+if(_node.addEventListener){
+_node.addEventListener(_type,_cb);
+}else if(_node.attachEvent){
+_node.attachEvent('on'+_type,_cb);
+}
+},
+_pathPrefixArray = [
+'/store/', // 商城
+'/m/at/', // 活动
+'/prime/m/', // 会员移动端页面
+'/oauth2/', // 授权
+'/m/oauth2/', // 授权
+'/octave/', // 新数字专辑
+'/v/', // 新数字专辑
+'/st/', // 静态页面
+'/nmusician/',// 音乐人
+'/nact/', // 新活动
+'/m/topic/', // 专栏移动端
+'/show/m/', //演出移动端
+],
+_isNotMainsitePagePath = function(_pagePath){
+// 对于非主站内的页面的跳转 需要排除
+var _path = (_pagePath||'').replace(/^https?:\/\/.*?\//i, '/').split(/[?#]/)[0];
+for(var i=0;i<_pathPrefixArray.length;i++){
+if(_path.indexOf(_pathPrefixArray[i])===0) return true;
+}
+return false;
+},
+_onAnchorClick = function(_event){//截获所有<a>标签的点击事件，自定义页面的跳转
+_event = _event||window.event;
+var _el = _event.target||_event.srcElement,
+_base = location.protocol+'//'+location.host;
+while(_el&&_el!=document){
+if(_el.tagName&&_el.tagName.toLowerCase()=='a'){
+//fix ie6下有时javascript:;不能阻止默认事件的bug.
+if(_el.href.indexOf('javascript:')>=0){
+!!_event.preventDefault
+? _event.preventDefault()
+: _event.returnValue = !1;
+return;
+}
+if(_event.button==2) return;//ff 右键会触发click事件
+//商城有独立地顶栏了，排除掉。但会员、数字专辑、单曲的商品、订单页仍保持主站frame，
+//这些url往往是通过/vip2, /payfee这样的地址跳转的，也没有问题，如果真的有，URL用#配置就好了
+if(_isNotMainsitePagePath(_el.href)) return;
+//新窗口打开的链接、云音乐单页面形式的链接、站外的链接不做拦截处理。
+if(_el.target=='_blank'
+||_el.target=='blank'
+||_isNotSameHost(_el.href)
+||_el.href==_base
+||_el.href.indexOf(_base+'/#')>=0) return;
+!!_event.preventDefault
+? _event.preventDefault()
+: _event.returnValue = !1;
+location.dispatch2(_el.href);
+break;
+}else{
+_el = _el.parentNode;
+}
+}
+},
+_isNotSameHost = function(_href){
+var _same = true;
+if(_href.charAt(0)!='/'){
+var _index = _href.indexOf('//'+location.hostname);
+if(_index > 0){
+var _index2 = _href.indexOf('?');
+if(_index2 > 0 && _index2 < _index){
+_same = false;
+}
+}else{
+_same = false;
+}
+}
+return !_same;
+};
+_addEvent(document,'click',_onAnchorClick);
+//扩展一个js中直接使用的页面跳转的方法，以拦截js中的页面跳转行为
+location.dispatch2 = function(_url,_replace){
+var delegate = false;
+try{
+delegate = !!top.GDispatcher;
+}catch(e){
+delegate = false;
+}
+// 处理对于非主站内的页面的跳转
+if(_isNotMainsitePagePath(_url)){
+if(delegate && top.location && top.location.href){
+top.location.href = _url;
+}else{
+location.href = _url;
+}
+return;
+}
+if(delegate){
+top.GDispatcher.dispatch(_url,_replace);
+}else{
+_url = GUtil.composeRefer(_url,GRef);
+//邮箱音乐盒中，每次链接的跳转都要将proxy.html的地址合并到hash中
+if(GRef&&GRef=='mail'){
+var _hindex,_sindex,
+_reg = /(https?:\/\/.+\/proxy.html)/,
+_hreg = /#(.*?)$/,
+_href = decodeURIComponent(location.href);
+if(!_reg.test(decodeURIComponent(_url))&&_reg.test(_href)){
+_hindex = _url.indexOf('#');
+_sindex = _url.lastIndexOf('?');
+if(_hindex>0){
+_url = _url+(_sindex>_hindex?'&':'?')+'proxy='+encodeURIComponent(RegExp.$1);
+}else{
+_url = _url+'#proxy='+encodeURIComponent(RegExp.$1);
+}
+}
+}
+if(_replace){
+location.replace(_url);
+}else{
+location.href = _url;
+}
+}
+};
+})();
+(function start() {
+var targetUrl = 'https://music.163.com';
+// 首先检测hash规则, 在白名单内才进行跳转
+var hashWhite = /^(\/discover|\/download|\/login)/ig;
+// 如果当前域不是163域名，那么强制跳转到163.com
+var siteReg = /^(https?:\/\/)?([a-zA-Z0-9]+(-?[a-zA-Z0-9])*\.){1,}?(163\.com)$/ig;
+if(hashWhite.test(window.location.pathname) && !siteReg.test(window.location.hostname)){
+top.location.href = targetUrl;
+}
+})();(function(){
+if(window.addEventListener){
+window.addEventListener('scroll', onScroll)
+}else{
+window.attachEvent('onscroll', onScroll)
+}
+try{
+top.scrollTopbar(0);
+}catch(e){
+}
+function onScroll(){
+try{
+top.scrollTopbar(Math.max(document.body.scrollTop, document.documentElement.scrollTop));
+}catch(e){
+//ignore
+}
+};
+})();</script>
+<base href="//music.163.com/" target="_top">
+<link rel="shortcut icon" href="//s1.music.126.net/style/favicon.ico?v20180823" />
+<link href="//s2.music.126.net/web/s/core_0de30c473ed72cf66abc32629877f858.css?0de30c473ed72cf66abc32629877f858" type="text/css" rel="stylesheet"/><link href="//s2.music.126.net/web/s/pt_frame_bc27170ba24b668e79834ee58d54e159.css?bc27170ba24b668e79834ee58d54e159" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div data-module="discover" data-sub="toplist" id="g_top" class="m-top">&nbsp;</div>
+<div id="g_nav" class="m-subnav">&nbsp;</div>
+<script>
+try{
+top.matchNav("discover", "toplist");
+}catch(e){
+}
+</script>
+<div id="toplist" class="g-bd3 g-bd3-1 f-cb">
+<div class="g-sd3 g-sd3-1">
+<div class="n-minelst n-minelst-2">
+<h2 class="f-ff1">云音乐特色榜</h2>
+<ul class="f-cb">
+<li data-res-id="19723756" data-res-action="href" class="mine z-selected">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=19723756">
+<img src="http://p1.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=40y40" alt="云音乐飙升榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=19723756" class="s-fc0">云音乐飙升榜</a></p>
+<p class="s-fc4">每天更新</p>
+</div>
+</li>
+<li data-res-id="3779629" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=3779629">
+<img src="http://p1.music.126.net/N2HO5xfYEqyQ8q6oxCw8IQ==/18713687906568048.jpg?param=40y40" alt="云音乐新歌榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=3779629" class="s-fc0">云音乐新歌榜</a></p>
+<p class="s-fc4">每天更新</p>
+</div>
+</li>
+<li data-res-id="2884035" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=2884035">
+<img src="http://p1.music.126.net/sBzD11nforcuh1jdLSgX7g==/18740076185638788.jpg?param=40y40" alt="网易原创歌曲榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=2884035" class="s-fc0">网易原创歌曲榜</a></p>
+<p class="s-fc4">每周四更新</p>
+</div>
+</li>
+<li data-res-id="3778678" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=3778678">
+<img src="http://p1.music.126.net/GhhuF6Ep5Tq9IEvLsyCN7w==/18708190348409091.jpg?param=40y40" alt="云音乐热歌榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=3778678" class="s-fc0">云音乐热歌榜</a></p>
+<p class="s-fc4">每周四更新</p>
+</div>
+</li>
+</ul>
+<h2 class="scd f-ff1">全球媒体榜</h2>
+<ul class="f-cb">
+<li data-res-id="991319590" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=991319590">
+<img src="http://p1.music.126.net/y8zyTt4HwXbJqB31aQKz1A==/109951164353220919.jpg?param=40y40" alt="云音乐说唱榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=991319590" class="s-fc0">云音乐说唱榜</a></p>
+<p class="s-fc4">每周五更新</p>
+</div>
+</li>
+<li data-res-id="71384707" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=71384707">
+<img src="http://p1.music.126.net/BzSxoj6O1LQPlFceDn-LKw==/18681802069355169.jpg?param=40y40" alt="云音乐古典音乐榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=71384707" class="s-fc0">云音乐古典音乐榜</a></p>
+<p class="s-fc4">每周四更新</p>
+</div>
+</li>
+<li data-res-id="1978921795" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=1978921795">
+<img src="http://p1.music.126.net/5tgOCD4jiPKBGt7znJl-2g==/18822539557941307.jpg?param=40y40" alt="云音乐电音榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=1978921795" class="s-fc0">云音乐电音榜</a></p>
+<p class="s-fc4">每周五更新</p>
+</div>
+</li>
+<li data-res-id="2250011882" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=2250011882">
+<img src="http://p1.music.126.net/oUxnXXvM33OUHxxukYnUjQ==/109951164174523461.jpg?param=40y40" alt="抖音排行榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=2250011882" class="s-fc0">抖音排行榜</a></p>
+<p class="s-fc4">每周五更新</p>
+</div>
+</li>
+<li data-res-id="2617766278" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=2617766278">
+<img src="http://p1.music.126.net/XbjRDARP1xv5a-40ZDOy6A==/109951163785427934.jpg?param=40y40" alt="新声榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=2617766278" class="s-fc0">新声榜</a></p>
+<p class="s-fc4">每周一更新</p>
+</div>
+</li>
+<li data-res-id="71385702" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=71385702">
+<img src="http://p1.music.126.net/vttjtRjL75Q4DEnjRsO8-A==/18752170813539664.jpg?param=40y40" alt="云音乐ACG音乐榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=71385702" class="s-fc0">云音乐ACG音乐榜</a></p>
+<p class="s-fc4">每周四更新</p>
+</div>
+</li>
+<li data-res-id="745956260" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=745956260">
+<img src="http://p1.music.126.net/vs-cMh49e6qPEorHuhU07A==/18737877162497499.jpg?param=40y40" alt="云音乐韩语榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=745956260" class="s-fc0">云音乐韩语榜</a></p>
+<p class="s-fc4">每周四更新</p>
+</div>
+</li>
+<li data-res-id="10520166" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=10520166">
+<img src="http://p1.music.126.net/8-GBrukQ3BHhs4CmK6qE4w==/109951163424197392.jpg?param=40y40" alt="云音乐国电榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=10520166" class="s-fc0">云音乐国电榜</a></p>
+<p class="s-fc4">每周五更新</p>
+</div>
+</li>
+<li data-res-id="2023401535" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=2023401535">
+<img src="http://p1.music.126.net/0_6_Efe9m0D0NtghOxinUg==/109951163089272193.jpg?param=40y40" alt="英国Q杂志中文版周榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=2023401535" class="s-fc0">英国Q杂志中文版周榜</a></p>
+<p class="s-fc4">每周三更新</p>
+</div>
+</li>
+<li data-res-id="2006508653" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=2006508653">
+<img src="http://p1.music.126.net/CUqQp33MZf_m0BwH4u0V6A==/109951163078922993.jpg?param=40y40" alt="电竞音乐榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=2006508653" class="s-fc0">电竞音乐榜</a></p>
+<p class="s-fc4">每周五更新</p>
+</div>
+</li>
+<li data-res-id="180106" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=180106">
+<img src="http://p1.music.126.net/VQOMRRix9_omZbg4t-pVpw==/18930291695438269.jpg?param=40y40" alt="UK排行榜周榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=180106" class="s-fc0">UK排行榜周榜</a></p>
+<p class="s-fc4">每周一更新</p>
+</div>
+</li>
+<li data-res-id="60198" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=60198">
+<img src="http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg?param=40y40" alt="美国Billboard周榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=60198" class="s-fc0">美国Billboard周榜</a></p>
+<p class="s-fc4">每周三更新</p>
+</div>
+</li>
+<li data-res-id="3812895" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=3812895">
+<img src="http://p1.music.126.net/A61n94BjWAb-ql4xpwpYcg==/18613632348448741.jpg?param=40y40" alt="Beatport全球电子舞曲榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=3812895" class="s-fc0">Beatport全球电子舞曲榜</a></p>
+<p class="s-fc4">每周四更新</p>
+</div>
+</li>
+<li data-res-id="21845217" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=21845217">
+<img src="http://p1.music.126.net/H4Y7jxd_zwygcAmPMfwJnQ==/19174383276805159.jpg?param=40y40" alt="KTV唛榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=21845217" class="s-fc0">KTV唛榜</a></p>
+<p class="s-fc4">每周五更新</p>
+</div>
+</li>
+<li data-res-id="11641012" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=11641012">
+<img src="http://p1.music.126.net/WTpbsVfxeB6qDs_3_rnQtg==/109951163601178881.jpg?param=40y40" alt="iTunes榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=11641012" class="s-fc0">iTunes榜</a></p>
+<p class="s-fc4">每周一更新</p>
+</div>
+</li>
+<li data-res-id="60131" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=60131">
+<img src="http://p1.music.126.net/Rgqbqsf4b3gNOzZKxOMxuw==/19029247741938160.jpg?param=40y40" alt="日本Oricon周榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=60131" class="s-fc0">日本Oricon周榜</a></p>
+<p class="s-fc4">每周三更新</p>
+</div>
+</li>
+<li data-res-id="120001" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=120001">
+<img src="http://p1.music.126.net/54vZEZ-fCudWZm6GH7I55w==/19187577416338508.jpg?param=40y40" alt="Hit FM Top榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=120001" class="s-fc0">Hit FM Top榜</a></p>
+<p class="s-fc4">每周一更新</p>
+</div>
+</li>
+<li data-res-id="112463" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=112463">
+<img src="http://p1.music.126.net/wqi4TF4ILiTUUL5T7zhwsQ==/18646617697286899.jpg?param=40y40" alt="台湾Hito排行榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=112463" class="s-fc0">台湾Hito排行榜</a></p>
+<p class="s-fc4">每周一更新</p>
+</div>
+</li>
+<li data-res-id="2809513713" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=2809513713">
+<img src="http://p1.music.126.net/c0iThrYPpnFVgFvU6JCVXQ==/109951164091703579.jpg?param=40y40" alt="云音乐欧美热歌榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=2809513713" class="s-fc0">云音乐欧美热歌榜</a></p>
+<p class="s-fc4">每周四更新</p>
+</div>
+</li>
+<li data-res-id="2809577409" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=2809577409">
+<img src="http://p2.music.126.net/Zb8AL5xdl9-_7WIyAhRLbw==/109951164091690485.jpg?param=40y40" alt="云音乐欧美新歌榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=2809577409" class="s-fc0">云音乐欧美新歌榜</a></p>
+<p class="s-fc4">每天更新</p>
+</div>
+</li>
+<li data-res-id="27135204" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=27135204">
+<img src="http://p2.music.126.net/6O0ZEnO-I_RADBylVypprg==/109951162873641556.jpg?param=40y40" alt="法国 NRJ Vos Hits 周榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=27135204" class="s-fc0">法国 NRJ Vos Hits 周榜</a></p>
+<p class="s-fc4">每周五更新</p>
+</div>
+</li>
+<li data-res-id="3112516681" data-res-action="href" class="mine ">
+<div class="item f-cb">
+<div class="left">
+<a class="avatar" href="/discover/toplist?id=3112516681">
+<img src="http://p2.music.126.net/E5xPfNqD1rp6dB1VPOlLUQ==/109951164540938467.jpg?param=40y40" alt="中国新乡村音乐排行榜"/>
+<span class="msk"></span>
+</a>
+</div>
+<p class="name"><a href="/discover/toplist?id=3112516681" class="s-fc0">中国新乡村音乐排行榜</a></p>
+<p class="s-fc4">每周四更新</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="g-mn3">
+<div class="g-mn3c">
+<div class="g-wrap">
+<div class="m-info m-info-rank f-cb">
+<div class="cover u-cover u-cover-rank"><img src="http://p1.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=150y150"><span class="msk"></span></div>
+<div class="cnt">
+<div class="cntc m-info">
+<div class="hd f-cb">
+<h2 class="f-ff2">云音乐飙升榜</h2>
+</div>
+<div class="user f-cb">
+<i class="u-icn u-icn-57"></i><span class="sep s-fc3">最近更新：04月07日</span> <span class="s-fc4">（每天更新）</span>
+</div>
+<div class="btns f-cb">
+<a href="javascript:;" class="u-btn2 u-btn2-2 u-btni-addply f-fl" hidefocus="true" title="播放"
+data-res-type="13"
+data-res-id="19723756"
+data-res-action="play"
+data-res-from="31"
+data-res-data="19723756"><i><em class="ply"></em>播放</i></a>
+<a href="javascript:;" class="u-btni u-btni-add" hidefocus="true" title="添加到播放列表"
+data-res-type="13"
+data-res-id="19723756"
+data-res-action="addto"
+data-res-from="31"
+data-res-data="19723756"></a>
+<a id="toplist-fav" data-res-id="19723756" data-res-type="13" data-res-action="fav" data-res-data="2897049" class="u-btni u-btni-fav" href="javascript:;"><i>(2897049)</i></a>
+<a id="toplist-share" data-res-id="19723756" data-res-type="13" data-res-action="share" data-res-name="云音乐飙升榜" data-res-author="网易云音乐" data-res-data="http://p1.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg" class="u-btni u-btni-share" href="javascript:;"><i>(8140)</i></a>
+<a data-res-id="19723756" data-res-type="13" data-res-action="download" class="u-btni u-btni-dl" href="javascript:;"><i>下载</i></a>
+<a data-res-id="19723756" data-res-action="comment" href="javascript:;" class="u-btni u-btni-cmmt j-cmt"><i>(<span id="comment-count">172754</span>)</i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="g-wrap12">
+<div class="u-title u-title-1 f-cb"><h3><span class="f-ff2">歌曲列表</span></h3><span class="sub s-fc3"><span>99</span>首歌</span><div class="more s-fc3">播放：<strong class="s-fc6" id="play-count">3029166336</strong>次</div></div>
+<div id="song-list-pre-cache" data-key="song_toplist-19723756" data-simple="0" data-pvnamed="0">
+<div class="u-load s-fc4"><i class="icn"></i> 加载中...</div>
+<ul class="f-hide"><li><a href="/song?id=1435998275">Oh my god</a></li><li><a href="/song?id=1437636100">不懂事</a></li><li><a href="/song?id=1386460251">天下</a></li><li><a href="/song?id=1435996552">사랑해</a></li><li><a href="/song?id=1435998367">Maybe</a></li><li><a href="/song?id=1435996669">Oh my god (English Ver.)</a></li><li><a href="/song?id=1437274865">今夜的江滩公园没有烟花跨年</a></li><li><a href="/song?id=1435996622">LION</a></li><li><a href="/song?id=1436936781">全世界挡不住你的光</a></li><li><a href="/song?id=1426285166">当遇见你</a></li><li><a href="/song?id=1415829224">零几年听的情歌</a></li><li><a href="/song?id=1437274446">秉烛照夜</a></li><li><a href="/song?id=1437176263">猫じゃらし</a></li><li><a href="/song?id=1431946742">Heading Home</a></li><li><a href="/song?id=1437204419">Toosie Slide</a></li><li><a href="/song?id=465921195">还是分开</a></li><li><a href="/song?id=1437597596">慌张</a></li><li><a href="/song?id=1426112587">下雨天</a></li><li><a href="/song?id=1437240162">猫じゃらし (Orchestra ver.)</a></li><li><a href="/song?id=1430652542">Light The Light</a></li><li><a href="/song?id=1436447680">转角</a></li><li><a href="/song?id=1438179042">后来遇见他陪我春秋冬夏</a></li><li><a href="/song?id=1434429128">未来式情歌</a></li><li><a href="/song?id=1438139575">GET UP</a></li><li><a href="/song?id=1434343768">偏执</a></li><li><a href="/song?id=1429392929">雪花落下</a></li><li><a href="/song?id=1437195439">Melody Rap</a></li><li><a href="/song?id=1417166015">穷极一生到不了的天堂</a></li><li><a href="/song?id=1425643256">你要相信这不是最后一天</a></li><li><a href="/song?id=1419072313">异乡</a></li><li><a href="/song?id=1344897943">你是人间四月天</a></li><li><a href="/song?id=1387157948">除了春天 爱情和樱花</a></li><li><a href="/song?id=1436149526">迷人的危险</a></li><li><a href="/song?id=1330348068">起风了</a></li><li><a href="/song?id=1435440065">心动</a></li><li><a href="/song?id=1431950441">heading_home_demo2016.wav</a></li><li><a href="/song?id=1418316824">我的快乐</a></li><li><a href="/song?id=1432156509">同样</a></li><li><a href="/song?id=1418131597">风恋歌</a></li><li><a href="/song?id=1437274770">내일부터 우리가 못본다면</a></li><li><a href="/song?id=1438055667">我爱你</a></li><li><a href="/song?id=1426649237">海底</a></li><li><a href="/song?id=1437037481">是你</a></li><li><a href="/song?id=1423137435">朋友请听好</a></li><li><a href="/song?id=545350938">NUMB</a></li><li><a href="/song?id=1416999695">短发的姑娘</a></li><li><a href="/song?id=1438025298">后来遇见他</a></li><li><a href="/song?id=1437743980">带你吃鸡</a></li><li><a href="/song?id=1426572175">Blind faith</a></li><li><a href="/song?id=1430850573">溯Reverse (Live)</a></li><li><a href="/song?id=1435446208">我想对你说</a></li><li><a href="/song?id=1436910205">好想爱这个世界啊 (Live)</a></li><li><a href="/song?id=1431767629">退烧</a></li><li><a href="/song?id=1437982166">踏仙</a></li><li><a href="/song?id=1437825038">Daydream</a></li><li><a href="/song?id=1437780199">和我接吻</a></li><li><a href="/song?id=1403046117">我与世界和解了</a></li><li><a href="/song?id=1424537185">会好的</a></li><li><a href="/song?id=1424343020">知我（抒情版）</a></li><li><a href="/song?id=1437926917">我最喜欢熬夜啦！</a></li><li><a href="/song?id=1401510530">安全感</a></li><li><a href="/song?id=1413183697">追 (翻自 陈壹千) </a></li><li><a href="/song?id=1430872359">你又在哪呢（demo）</a></li><li><a href="/song?id=1421191830">借 (Live)</a></li><li><a href="/song?id=1421859939">流沙</a></li><li><a href="/song?id=1400597273">鹤壁东</a></li><li><a href="/song?id=1435486057">源自你</a></li><li><a href="/song?id=1417862065">小王日记</a></li><li><a href="/song?id=1332618500">丁当</a></li><li><a href="/song?id=1417120347">这就是爱吗</a></li><li><a href="/song?id=1436926894">你去过你的吧</a></li><li><a href="/song?id=1426233208">痛快</a></li><li><a href="/song?id=1438174865">Body Lotion</a></li><li><a href="/song?id=518725853">篝火旁</a></li><li><a href="/song?id=1339645245">边陲小镇</a></li><li><a href="/song?id=1414038620">走吧,女孩</a></li><li><a href="/song?id=1430898876">猫空缆车</a></li><li><a href="/song?id=1419634503">光</a></li><li><a href="/song?id=1429857402">陪你旅行的人</a></li><li><a href="/song?id=1433734307">Hello Goodbye</a></li><li><a href="/song?id=1433313929">Dream Wedding</a></li><li><a href="/song?id=1425757434">曙光</a></li><li><a href="/song?id=1406769209">事关于你（demo）</a></li><li><a href="/song?id=1433946294">(if only i could) hold you</a></li><li><a href="/song?id=1396304601">Lose Control</a></li><li><a href="/song?id=1413377028">羡慕</a></li><li><a href="/song?id=1358848433">追</a></li><li><a href="/song?id=1408941731">R&B All Night</a></li><li><a href="/song?id=1417849885">等</a></li><li><a href="/song?id=1401204171">我在原地等你</a></li><li><a href="/song?id=1437387815">原谅我真的离不开你</a></li><li><a href="/song?id=1414157538">都市丽人生存报告</a></li><li><a href="/song?id=1416772486">怎么能忘了（不插电）</a></li><li><a href="/song?id=1431769288">回放浪漫</a></li><li><a href="/song?id=1437149818">Feel Something</a></li><li><a href="/song?id=1432563193">当苹果成熟的时候</a></li><li><a href="/song?id=1425099212">低半度</a></li><li><a href="/song?id=1435422387">quarantine freestyle</a></li><li><a href="/song?id=1303289043">囍（Chinese Wedding）</a></li></ul>
+<textarea id="song-list-pre-data" style="display:none;">[{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435998275,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87164641,"name":"I trust","picUrl":"http://p2.music.126.net/7jq2RhAjWUw6YNWB7iHSSw==/109951164877297432.jpg","tns":[],"pic_str":"109951164877297432","pic":109951164877297432},"artists":[{"id":14055085,"name":"(G)I-DLE","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1415873,"mvid":10924941,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1435998275","publishTime":0,"alias":[],"type":0,"duration":195866,"name":"Oh my god","id":1435998275},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437636100,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87619256,"name":"不懂事","picUrl":"http://p2.music.126.net/6_rlf2uRSrgUfWgRIGr5bg==/109951164871123647.jpg","tns":[],"pic_str":"109951164871123647","pic":109951164871123647},"artists":[{"id":34357551,"name":"吴炳文Cookie","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416750,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437636100","publishTime":0,"alias":[],"type":0,"duration":231307,"name":"不懂事","id":1437636100},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1386460251,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":81090493,"name":"天下","picUrl":"http://p2.music.126.net/sAJx8EMZqPaLN1yXgDTvjg==/109951164874863256.jpg","tns":[],"pic_str":"109951164874863256","pic":109951164874863256},"artists":[{"id":32829923,"name":"高鱼","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1386460251","publishTime":0,"alias":["原唱：张杰"],"type":0,"duration":211818,"name":"天下","id":1386460251,"lastRank":2},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435996552,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87164641,"name":"I trust","picUrl":"http://p1.music.126.net/7jq2RhAjWUw6YNWB7iHSSw==/109951164877297432.jpg","tns":[],"pic_str":"109951164877297432","pic":109951164877297432},"artists":[{"id":14055085,"name":"(G)I-DLE","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1415873,"mvid":0,"transNames":["Luv U"],"no":2,"commentThreadId":"R_SO_4_1435996552","publishTime":0,"alias":[],"type":0,"duration":213613,"name":"사랑해","id":1435996552},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435998367,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87164641,"name":"I trust","picUrl":"http://p1.music.126.net/7jq2RhAjWUw6YNWB7iHSSw==/109951164877297432.jpg","tns":[],"pic_str":"109951164877297432","pic":109951164877297432},"artists":[{"id":14055085,"name":"(G)I-DLE","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1415873,"mvid":0,"transNames":null,"no":3,"commentThreadId":"R_SO_4_1435998367","publishTime":0,"alias":[],"type":0,"duration":180893,"name":"Maybe","id":1435998367},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435996669,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87164641,"name":"I trust","picUrl":"http://p2.music.126.net/7jq2RhAjWUw6YNWB7iHSSw==/109951164877297432.jpg","tns":[],"pic_str":"109951164877297432","pic":109951164877297432},"artists":[{"id":14055085,"name":"(G)I-DLE","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1415873,"mvid":0,"transNames":null,"no":5,"commentThreadId":"R_SO_4_1435996669","publishTime":0,"alias":[],"type":0,"duration":195866,"name":"Oh my god (English Ver.)","id":1435996669},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437274865,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87552305,"name":"今夜的江滩公园没有烟花跨年","picUrl":"http://p2.music.126.net/8dPBP18rj4OHmkDthKKelg==/109951164874134201.jpg","tns":[],"pic_str":"109951164874134201","pic":109951164874134201},"artists":[{"id":1050282,"name":"房东的猫","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437274865","publishTime":0,"alias":[],"type":0,"duration":308181,"name":"今夜的江滩公园没有烟花跨年","id":1437274865,"lastRank":10},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435996622,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87164641,"name":"I trust","picUrl":"http://p2.music.126.net/7jq2RhAjWUw6YNWB7iHSSw==/109951164877297432.jpg","tns":[],"pic_str":"109951164877297432","pic":109951164877297432},"artists":[{"id":14055085,"name":"(G)I-DLE","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1415873,"mvid":0,"transNames":null,"no":4,"commentThreadId":"R_SO_4_1435996622","publishTime":0,"alias":[],"type":0,"duration":210973,"name":"LION","id":1435996622},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1436936781,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87501606,"name":"全世界挡不住你的光","picUrl":"http://p2.music.126.net/eEmdGb1DHfmJ_njt3XWRaw==/109951164863981281.jpg","tns":[],"pic_str":"109951164863981281","pic":109951164863981281},"artists":[{"id":32399227,"name":"王巨星","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1372818,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1436936781","publishTime":1585929600000,"alias":[],"type":0,"duration":205970,"name":"全世界挡不住你的光","id":1436936781,"lastRank":5},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1426285166,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86025678,"name":"当遇见你","picUrl":"http://p2.music.126.net/G_2C4j_g-vC_3M2YJ-F5pg==/109951164744571789.jpg","tns":[],"pic_str":"109951164744571789","pic":109951164744571789},"artists":[{"id":1094010,"name":"摩登兄弟刘宇宁","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416278,"mvid":10918489,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1426285166","publishTime":0,"alias":["电视剧《冰糖炖雪梨》片尾曲"],"type":0,"duration":191106,"name":"当遇见你","id":1426285166},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1415829224,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":84783570,"name":"零几年听的情歌","picUrl":"http://p2.music.126.net/zt4AdUaoa3Pow8rjSpdBsA==/109951164616603260.jpg","tns":[],"pic_str":"109951164616603260","pic":109951164616603260},"artists":[{"id":12258420,"name":"AY楊佬叁","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1415829224","publishTime":0,"alias":[],"type":0,"duration":148566,"name":"零几年听的情歌","id":1415829224,"lastRank":0},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437274446,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87552105,"name":"秉烛照夜","picUrl":"http://p2.music.126.net/J0CIbg-mJvlHsJzvPWv9Tg==/109951164875561435.jpg","tns":[],"pic_str":"109951164875561435","pic":109951164875561435},"artists":[{"id":31862479,"name":"国风堂","tns":[],"alias":[]},{"id":1047064,"name":"KBShinya","tns":[],"alias":[]},{"id":1085108,"name":"哦漏","tns":[],"alias":[]},{"id":1037013,"name":"少恭","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437274446","publishTime":0,"alias":[],"type":0,"duration":204319,"name":"秉烛照夜","id":1437274446},{"status":0,"privilege":{"st":0,"flag":64,"subp":0,"fl":0,"fee":4,"dl":0,"cp":0,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437176263,"pl":0,"sp":0,"payed":0},"djid":0,"fee":4,"album":{"id":87541459,"name":"猫じゃらし","picUrl":"http://p2.music.126.net/aoLeXYGQAjsV0nL-aBrC0w==/109951164866182862.jpg","tns":[],"pic_str":"109951164866182862","pic":109951164866182862},"artists":[{"id":21132,"name":"RADWIMPS","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":587012,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437176263","publishTime":0,"alias":["Nekojarashi"],"type":0,"duration":267773,"name":"猫じゃらし","id":1437176263},{"status":0,"privilege":{"st":0,"flag":4,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1431946742,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86610366,"name":"Heading Home","picUrl":"http://p2.music.126.net/RHoQxyCQ9cE76v9bXWOTTw==/109951164815550387.jpg","tns":[],"pic_str":"109951164815550387","pic":109951164815550387},"artists":[{"id":1045123,"name":"Alan Walker","tns":[],"alias":[]},{"id":12347080,"name":"Ruben","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7001,"mvid":10924546,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1431946742","publishTime":1585670400000,"alias":[],"type":0,"duration":184946,"name":"Heading Home","id":1431946742},{"status":0,"privilege":{"st":0,"flag":260,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1437204419,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87545810,"name":"Toosie Slide","picUrl":"http://p2.music.126.net/1NQMiv0HoJe0HOojDEQpmA==/109951164866536606.jpg","tns":[],"pic_str":"109951164866536606","pic":109951164866536606},"artists":[{"id":53283,"name":"Drake","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7003,"mvid":10924722,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437204419","publishTime":1585843200000,"alias":[],"type":0,"duration":247092,"name":"Toosie Slide","id":1437204419},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":465921195,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":35287063,"name":"还是分开","picUrl":"http://p2.music.126.net/tH5FdakJX47uy8mlM0GMWQ==/19218363741925314.jpg","tns":[],"pic_str":"19218363741925314","pic":19218363741925314},"artists":[{"id":12213291,"name":"张叶蕾","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":399010,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_465921195","publishTime":1488729600007,"alias":[],"type":0,"duration":226791,"name":"还是分开","id":465921195,"lastRank":24},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437597596,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87616524,"name":"慌张","picUrl":"http://p1.music.126.net/wdjt4m9fiP6DvhX6GnpVFg==/109951164873401118.jpg","tns":[],"pic_str":"109951164873401118","pic":109951164873401118},"artists":[{"id":12259686,"name":"赵登凯","tns":[],"alias":[]},{"id":12085562,"name":"买辣椒也用券","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416749,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437597596","publishTime":0,"alias":[],"type":0,"duration":332768,"name":"慌张","id":1437597596,"lastRank":11},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1426112587,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85998494,"name":"下雨天","picUrl":"http://p1.music.126.net/qRfggLX2Va3Wslqjr7FxSg==/109951164742550320.jpg","tns":[],"pic_str":"109951164742550320","pic":109951164742550320},"artists":[{"id":12195788,"name":"芝麻Mochi","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416532,"mvid":0,"transNames":null,"no":0,"commentThreadId":"R_SO_4_1426112587","publishTime":0,"alias":[],"type":0,"duration":265846,"name":"下雨天","id":1426112587},{"status":0,"privilege":{"st":0,"flag":64,"subp":0,"fl":0,"fee":4,"dl":0,"cp":0,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437240162,"pl":0,"sp":0,"payed":0},"djid":0,"fee":4,"album":{"id":87541459,"name":"猫じゃらし","picUrl":"http://p2.music.126.net/aoLeXYGQAjsV0nL-aBrC0w==/109951164866182862.jpg","tns":[],"pic_str":"109951164866182862","pic":109951164866182862},"artists":[{"id":21132,"name":"RADWIMPS","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":587012,"mvid":0,"transNames":null,"no":2,"commentThreadId":"R_SO_4_1437240162","publishTime":0,"alias":["Nekojarashi (Orchestra ver.)"],"type":0,"duration":266186,"name":"猫じゃらし (Orchestra ver.)","id":1437240162},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":0,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1430652542,"pl":999000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86479805,"name":"Light The Light","picUrl":"http://p1.music.126.net/dQL9KZXbmGZGE2iwiCbrOw==/109951164800334633.jpg","tns":[],"pic_str":"109951164800334633","pic":109951164800334633},"artists":[{"id":21132,"name":"RADWIMPS","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":587012,"mvid":10921915,"transNames":null,"no":0,"commentThreadId":"R_SO_4_1430652542","publishTime":0,"alias":[],"type":0,"duration":240465,"name":"Light The Light","id":1430652542,"lastRank":18},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1436447680,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87337194,"name":"转角","picUrl":"http://p2.music.126.net/2vzHye1IMIwbi2wWTg-CGg==/109951164861159267.jpg","tns":[],"pic_str":"109951164861159267","pic":109951164861159267},"artists":[{"id":12382937,"name":"丸子呦","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":0,"commentThreadId":"R_SO_4_1436447680","publishTime":0,"alias":[],"type":0,"duration":255950,"name":"转角","id":1436447680},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1438179042,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87651220,"name":"后来遇见他","picUrl":"http://p2.music.126.net/ULYwboXoPsCF3_Zsjr97BA==/109951164875785527.jpg","tns":[],"pic_str":"109951164875785527","pic":109951164875785527},"artists":[{"id":12287900,"name":"初相见","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1438179042","publishTime":0,"alias":[],"type":0,"duration":144882,"name":"后来遇见他陪我春秋冬夏","id":1438179042},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1434429128,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86883936,"name":"未来式情歌","picUrl":"http://p2.music.126.net/ZS80L7M1hM0NAKiEAgj_VQ==/109951164845438766.jpg","tns":[],"pic_str":"109951164845438766","pic":109951164845438766},"artists":[{"id":12571830,"name":"零6","tns":[],"alias":[]},{"id":34283831,"name":"陆怡雯","tns":[],"alias":[]},{"id":34283853,"name":"吕帅","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1434429128","publishTime":1584115200000,"alias":[],"type":0,"duration":178010,"name":"未来式情歌","id":1434429128,"lastRank":78},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1438139575,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87648433,"name":"GET UP","picUrl":"http://p1.music.126.net/kh8WbfkpDn_aVo8cZG1TyQ==/109951164876824313.jpg","tns":[],"pic_str":"109951164876824313","pic":109951164876824313},"artists":[{"id":30003804,"name":"404 RAPPER","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1438139575","publishTime":0,"alias":[],"type":0,"duration":173701,"name":"GET UP","id":1438139575},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1434343768,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86870431,"name":"偏执","picUrl":"http://p1.music.126.net/yPky6N6f8Fs49__alhCoGw==/109951164844400238.jpg","tns":[],"pic_str":"109951164844400238","pic":109951164844400238},"artists":[{"id":12444171,"name":"棉子","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1434343768","publishTime":0,"alias":[],"type":0,"duration":260309,"name":"偏执","id":1434343768},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1429392929,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86341104,"name":"雪花落下","picUrl":"http://p1.music.126.net/vB5VcDUS3aE0OqWx8zmGwQ==/109951164784793909.jpg","tns":[],"pic_str":"109951164784793909","pic":109951164784793909},"artists":[{"id":1030001,"name":"周深","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416278,"mvid":10921220,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1429392929","publishTime":0,"alias":["电视剧《冰糖炖雪梨》主题曲"],"type":0,"duration":229822,"name":"雪花落下","id":1429392929,"lastRank":52},{"status":0,"privilege":{"st":0,"flag":2,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437195439,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86835549,"name":"Melody Rap","picUrl":"http://p1.music.126.net/D6UQE848fivcRBQI8AvLZQ==/109951164866428092.jpg","tns":[],"pic_str":"109951164866428092","pic":109951164866428092},"artists":[{"id":12788387,"name":"Karen杨思雨","tns":[],"alias":[]},{"id":12520786,"name":"KUCCI","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437195439","publishTime":0,"alias":[],"type":0,"duration":148000,"name":"Melody Rap","id":1437195439},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1417166015,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85034241,"name":"穷极一生到不了的天堂","picUrl":"http://p2.music.126.net/fFQA72TD6CR-xuaINAGzEw==/109951164631802043.jpg","tns":[],"pic_str":"109951164631802043","pic":109951164631802043},"artists":[{"id":30476029,"name":"于潼","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":0,"commentThreadId":"R_SO_4_1417166015","publishTime":0,"alias":[],"type":0,"duration":237307,"name":"穷极一生到不了的天堂","id":1417166015},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1425643256,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85953546,"name":"你要相信这不是最后一天","picUrl":"http://p1.music.126.net/sL4dfIANkKupkJvPipmd5g==/109951164736488659.jpg","tns":[],"pic_str":"109951164736488659","pic":109951164736488659},"artists":[{"id":861777,"name":"华晨宇","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":636011,"mvid":0,"transNames":null,"no":0,"commentThreadId":"R_SO_4_1425643256","publishTime":0,"alias":[],"type":0,"duration":363194,"name":"你要相信这不是最后一天","id":1425643256},{"status":0,"privilege":{"st":0,"flag":2,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1419072313,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85226627,"name":"异乡","picUrl":"http://p2.music.126.net/OQWrv_KuMhkYVP2LjUTudw==/109951164676288980.jpg","tns":[],"pic_str":"109951164676288980","pic":109951164676288980},"artists":[{"id":33037629,"name":"盛夏晚荔","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1419072313","publishTime":0,"alias":[],"type":0,"duration":250264,"name":"异乡","id":1419072313},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1344897943,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":75465355,"name":"你是人间四月天","picUrl":"http://p2.music.126.net/kQJQD58WkmQneTneOYe22A==/109951164252455813.jpg","tns":[],"pic_str":"109951164252455813","pic":109951164252455813},"artists":[{"id":29392693,"name":"解忧邵帅","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1344897943","publishTime":1550073600000,"alias":[],"type":0,"duration":222401,"name":"你是人间四月天","id":1344897943,"lastRank":4},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1387157948,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":81211687,"name":"除了春天 爱情和樱花","picUrl":"http://p1.music.126.net/EjLqIs5EcmrCCcL7UNPdFA==/109951164328449238.jpg","tns":[],"pic_str":"109951164328449238","pic":109951164328449238},"artists":[{"id":32543188,"name":"卤蛋老师","tns":[],"alias":[]},{"id":30700959,"name":"superluckyqi","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1413823,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1387157948","publishTime":0,"alias":["是心动啊"],"type":0,"duration":197216,"name":"除了春天 爱情和樱花","id":1387157948},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1436149526,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87197628,"name":"迷人的危险","picUrl":"http://p2.music.126.net/W1TjgVCQ7PorGdEMkYTKUA==/109951164857574633.jpg","tns":[],"pic_str":"109951164857574633","pic":109951164857574633},"artists":[{"id":28085360,"name":"林童学","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":0,"commentThreadId":"R_SO_4_1436149526","publishTime":0,"alias":[],"type":0,"duration":212212,"name":"迷人的危险","id":1436149526},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1330348068,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":74715426,"name":"起风了","picUrl":"http://p2.music.126.net/diGAyEmpymX8G7JcnElncQ==/109951163699673355.jpg","tns":[],"pic_str":"109951163699673355","pic":109951163699673355},"artists":[{"id":12085562,"name":"买辣椒也用券","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1415923,"mvid":10782615,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1330348068","publishTime":0,"alias":[],"type":0,"duration":325868,"name":"起风了","id":1330348068},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435440065,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87043118,"name":"冰糖炖雪梨 电视剧原声带","picUrl":"http://p1.music.126.net/p2Ref6FsXi-D8XCthPV8rw==/109951164853174697.jpg","tns":[],"pic_str":"109951164853174697","pic":109951164853174697},"artists":[{"id":1081967,"name":"张新成","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":436013,"mvid":0,"transNames":null,"no":2,"commentThreadId":"R_SO_4_1435440065","publishTime":0,"alias":["电视剧《冰糖炖雪梨》插曲"],"type":0,"duration":238235,"name":"心动","id":1435440065},{"status":0,"privilege":{"st":0,"flag":4,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1431950441,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86610366,"name":"Heading Home","picUrl":"http://p1.music.126.net/RHoQxyCQ9cE76v9bXWOTTw==/109951164815550387.jpg","tns":[],"pic_str":"109951164815550387","pic":109951164815550387},"artists":[{"id":1045123,"name":"Alan Walker","tns":[],"alias":[]},{"id":12347080,"name":"Ruben","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7001,"mvid":0,"transNames":null,"no":2,"commentThreadId":"R_SO_4_1431950441","publishTime":1585670400000,"alias":[],"type":0,"duration":193541,"name":"heading_home_demo2016.wav","id":1431950441},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1418316824,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85151687,"name":"我的快乐","picUrl":"http://p2.music.126.net/vHaOkkbiAe33vKELT0XpSw==/109951164645579534.jpg","tns":[],"pic_str":"109951164645579534","pic":109951164645579534},"artists":[{"id":31439753,"name":"淋海","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":0,"commentThreadId":"R_SO_4_1418316824","publishTime":0,"alias":["原唱：锦绣二重唱"],"type":0,"duration":175086,"name":"我的快乐","id":1418316824},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1432156509,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86629529,"name":"同样","picUrl":"http://p1.music.126.net/MZZRZu-1aJzCZP9G-9e4iw==/109951164818119859.jpg","tns":[],"pic_str":"109951164818119859","pic":109951164818119859},"artists":[{"id":31668975,"name":"Lambert","tns":[],"alias":[]},{"id":31051426,"name":"杨胖雨","tns":[],"alias":[]},{"id":1053121,"name":"PonySoore","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416649,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1432156509","publishTime":0,"alias":[],"type":0,"duration":199199,"name":"同样","id":1432156509},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1418131597,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85125944,"name":"风恋歌","picUrl":"http://p1.music.126.net/Qjc3qyumYfFrpXheCtYIxQ==/109951164643480793.jpg","tns":[],"pic_str":"109951164643480793","pic":109951164643480793},"artists":[{"id":32041318,"name":"恋恋故人难","tns":[],"alias":[]},{"id":12195788,"name":"芝麻Mochi","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416195,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1418131597","publishTime":0,"alias":["“吹梦到西洲”日文特别限定曲"],"type":0,"duration":326125,"name":"风恋歌","id":1418131597},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437274770,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87552283,"name":"하이에나 OST Part.10","picUrl":"http://p1.music.126.net/8S3ZEbHynZXZt7VoL1xFlA==/109951164867340650.jpg","tns":["HYENA OST Part.10"],"pic_str":"109951164867340650","pic":109951164867340650},"artists":[{"id":12289022,"name":"韩胜宇","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416690,"mvid":10925339,"transNames":["If we can't see from tomorrow"],"no":1,"commentThreadId":"R_SO_4_1437274770","publishTime":1585929600000,"alias":[],"type":0,"duration":249230,"name":"내일부터 우리가 못본다면","id":1437274770},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1438055667,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87648240,"name":"路上呢","picUrl":"http://p1.music.126.net/kRPDHtattA1-WPh9cATJAg==/109951164876043486.jpg","tns":[],"pic_str":"109951164876043486","pic":109951164876043486},"artists":[{"id":30000975,"name":"空匪","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1438055667","publishTime":0,"alias":[],"type":0,"duration":165533,"name":"我爱你","id":1438055667},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1426649237,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85613223,"name":"《独》","picUrl":"http://p2.music.126.net/swcW0FE-__ihfjnJqU22Qg==/109951164696345792.jpg","tns":[],"pic_str":"109951164696345792","pic":109951164696345792},"artists":[{"id":33694141,"name":"一支榴莲","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1426649237","publishTime":0,"alias":[],"type":0,"duration":104544,"name":"海底","id":1426649237,"lastRank":32},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437037481,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87513487,"name":"是你","picUrl":"http://p1.music.126.net/KXvF1WXfcK9rBYq2u6yBIQ==/109951164865038776.jpg","tns":[],"pic_str":"109951164865038776","pic":109951164865038776},"artists":[{"id":1050364,"name":"Yee","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437037481","publishTime":0,"alias":[],"type":0,"duration":135461,"name":"是你","id":1437037481},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":320000,"fee":100262148,"dl":320000,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1423137435,"pl":320000,"sp":7,"payed":0},"djid":0,"fee":1,"album":{"id":85704476,"name":"朋友请听好","picUrl":"http://p1.music.126.net/2V55CPczHSbYA6EbOel4hg==/109951164746437122.jpg","tns":[],"pic_str":"109951164746437122","pic":109951164746437122},"artists":[{"id":3090,"name":"何炅","tns":[],"alias":[]},{"id":9960,"name":"谢娜","tns":[],"alias":[]},{"id":939088,"name":"易烊千玺","tns":[],"alias":[]},{"id":34435690,"name":"朋友请听好","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416697,"mvid":10920040,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1423137435","publishTime":0,"alias":["综艺《朋友请听好》同名主题曲"],"type":0,"duration":230431,"name":"朋友请听好","id":1423137435},{"status":0,"privilege":{"st":0,"flag":260,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":545350938,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":37873747,"name":"?","picUrl":"http://p2.music.126.net/8TMjdt2YSoNKuhaXETgbJA==/109951163191729177.jpg","tns":[],"pic_str":"109951163191729177","pic":109951163191729177},"artists":[{"id":12107961,"name":"XXXTENTACION","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7003,"mvid":0,"transNames":null,"no":7,"commentThreadId":"R_SO_4_545350938","publishTime":1521043200000,"alias":[],"type":0,"duration":186316,"name":"NUMB","id":545350938},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1416999695,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":84997859,"name":"短发的姑娘","picUrl":"http://p2.music.126.net/kA_ONmdR1vc7v6_mLoJDKg==/109951164630280318.jpg","tns":[],"pic_str":"109951164630280318","pic":109951164630280318},"artists":[{"id":33428669,"name":"韩蒴","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1416999695","publishTime":0,"alias":[],"type":0,"duration":222833,"name":"短发的姑娘","id":1416999695},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1438025298,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87651220,"name":"后来遇见他","picUrl":"http://p2.music.126.net/ULYwboXoPsCF3_Zsjr97BA==/109951164875785527.jpg","tns":[],"pic_str":"109951164875785527","pic":109951164875785527},"artists":[{"id":12287900,"name":"初相见","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1438025298","publishTime":0,"alias":[],"type":0,"duration":222840,"name":"后来遇见他","id":1438025298},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437743980,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87559303,"name":"带你吃鸡","picUrl":"http://p2.music.126.net/gGvN08eHXmw0RjdowZAwzg==/109951164872564263.jpg","tns":[],"pic_str":"109951164872564263","pic":109951164872564263},"artists":[{"id":31482269,"name":"stiTch没有糖","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437743980","publishTime":0,"alias":[],"type":0,"duration":150072,"name":"带你吃鸡","id":1437743980},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1426572175,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86043909,"name":"Blind faith","picUrl":"http://p2.music.126.net/zRR00_u7IY2h52YxiTXdKA==/109951164748120892.jpg","tns":[],"pic_str":"109951164748120892","pic":109951164748120892},"artists":[{"id":30692240,"name":"LinG","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1426572175","publishTime":0,"alias":[],"type":0,"duration":166288,"name":"Blind faith","id":1426572175},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1430850573,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86495711,"name":"我们的乐队 第1期","picUrl":"http://p1.music.126.net/awh9K8lfyyOtr5X0ysgBFw==/109951164802649972.jpg","tns":[],"pic_str":"109951164802649972","pic":109951164802649972},"artists":[{"id":28083351,"name":"CORSAK胡梦周","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416486,"mvid":0,"transNames":null,"no":5,"commentThreadId":"R_SO_4_1430850573","publishTime":0,"alias":[],"type":0,"duration":180032,"name":"溯Reverse (Live)","id":1430850573},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435446208,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87043118,"name":"冰糖炖雪梨 电视剧原声带","picUrl":"http://p1.music.126.net/p2Ref6FsXi-D8XCthPV8rw==/109951164853174697.jpg","tns":[],"pic_str":"109951164853174697","pic":109951164853174697},"artists":[{"id":0,"name":"曹博","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":436013,"mvid":0,"transNames":null,"no":7,"commentThreadId":"R_SO_4_1435446208","publishTime":0,"alias":["电视剧《冰糖炖雪梨》插曲"],"type":0,"duration":244477,"name":"我想对你说","id":1435446208},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":0,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1436910205,"pl":999000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87498640,"name":"歌手·当打之年 第9期","picUrl":"http://p2.music.126.net/p7n_zp4eoxY3a1XPzIomHQ==/109951164863688864.jpg","tns":[],"pic_str":"109951164863688864","pic":109951164863688864},"artists":[{"id":861777,"name":"华晨宇","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416682,"mvid":0,"transNames":null,"no":6,"commentThreadId":"R_SO_4_1436910205","publishTime":0,"alias":[],"type":0,"duration":262700,"name":"好想爱这个世界啊 (Live)","id":1436910205,"lastRank":16},{"status":0,"privilege":{"st":0,"flag":4,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1431767629,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86588012,"name":"退烧","picUrl":"http://p1.music.126.net/Fp6mVfQl9J7m0zXsYUZ2XQ==/109951164813485380.jpg","tns":[],"pic_str":"109951164813485380","pic":109951164813485380},"artists":[{"id":12131303,"name":"楚晴Jasmine Sokko","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7002,"mvid":10921728,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1431767629","publishTime":1584633600000,"alias":[],"type":0,"duration":179330,"name":"退烧","id":1431767629},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437982166,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87648061,"name":"《踏仙》——记《二哈和他的白猫师尊》","picUrl":"http://p2.music.126.net/P6zrAPIsCN8JQuL8WN330Q==/109951164875144522.jpg","tns":[],"pic_str":"109951164875144522","pic":109951164875144522},"artists":[{"id":10142,"name":"玄觞","tns":[],"alias":[]},{"id":13447158,"name":"涂山花花","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437982166","publishTime":0,"alias":[],"type":0,"duration":230122,"name":"踏仙","id":1437982166},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437825038,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87561355,"name":"Daydream","picUrl":"http://p2.music.126.net/FeGAV3lg60qisKkpMwkezA==/109951164873340783.jpg","tns":[],"pic_str":"109951164873340783","pic":109951164873340783},"artists":[{"id":12037259,"name":"Double C","tns":[],"alias":[]},{"id":13149216,"name":"444鬼錢","tns":[],"alias":[]},{"id":33778448,"name":"RUNCII","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437825038","publishTime":0,"alias":[],"type":0,"duration":221576,"name":"Daydream","id":1437825038},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437780199,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87567108,"name":"和我接吻","picUrl":"http://p2.music.126.net/MSNC0refmryhzpq18M364w==/109951164872843359.jpg","tns":[],"pic_str":"109951164872843359","pic":109951164872843359},"artists":[{"id":30216889,"name":"rain梁坤","tns":[],"alias":[]},{"id":12919446,"name":"Sop天","tns":[],"alias":[]},{"id":13285829,"name":"陈一wifi","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437780199","publishTime":0,"alias":[],"type":0,"duration":195108,"name":"和我接吻","id":1437780199},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1403046117,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":83234642,"name":"我与世界和解了","picUrl":"http://p1.music.126.net/WIIDmjHFJDv-zeARDwqx4g==/109951164483608520.jpg","tns":[],"pic_str":"109951164483608520","pic":109951164483608520},"artists":[{"id":1006061,"name":"赵晨唏","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1403046117","publishTime":0,"alias":[],"type":0,"duration":189740,"name":"我与世界和解了","id":1403046117},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":320000,"fee":0,"dl":999000,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1424537185,"pl":320000,"sp":7,"payed":0},"djid":0,"fee":0,"album":{"id":85846997,"name":"会好的","picUrl":"http://p2.music.126.net/Txhdjn9D5kamAj1HZ6ZBog==/109951164722740437.jpg","tns":[],"pic_str":"109951164722740437","pic":109951164722740437},"artists":[{"id":1047015,"name":"张艺兴","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416433,"mvid":10916252,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1424537185","publishTime":0,"alias":[],"type":0,"duration":210600,"name":"会好的","id":1424537185},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1424343020,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85610473,"name":"知我（抒情版）","picUrl":"http://p1.music.126.net/lk6TRXO6aS1mOjJUdrZReA==/109951164867820981.jpg","tns":[],"pic_str":"109951164867820981","pic":109951164867820981},"artists":[{"id":34324924,"name":"尘ah.","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1424343020","publishTime":0,"alias":[],"type":0,"duration":260617,"name":"知我（抒情版）","id":1424343020},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437926917,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87651781,"name":"我最喜欢熬夜啦！","picUrl":"http://p2.music.126.net/iQn3Qsgxdt6ebnB5ALjSyQ==/109951164874537505.jpg","tns":[],"pic_str":"109951164874537505","pic":109951164874537505},"artists":[{"id":30549077,"name":"尤超白","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437926917","publishTime":0,"alias":[],"type":0,"duration":134138,"name":"我最喜欢熬夜啦！","id":1437926917},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1401510530,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":82956598,"name":"安全感","picUrl":"http://p1.music.126.net/pYZOYUzKGuo6vISDs6yy8A==/109951164472357603.jpg","tns":[],"pic_str":"109951164472357603","pic":109951164472357603},"artists":[{"id":12782683,"name":"王冠程","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1401510530","publishTime":0,"alias":[],"type":0,"duration":249113,"name":"安全感","id":1401510530},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":320000,"fee":0,"dl":999000,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1413183697,"pl":320000,"sp":7,"payed":0},"djid":0,"fee":0,"album":{"id":84624228,"name":"追","picUrl":"http://p2.music.126.net/-SUVrc8cM8OzO5pOUGCTZQ==/109951164591834519.jpg","tns":[],"pic_str":"109951164591834519","pic":109951164591834519},"artists":[{"id":32674400,"name":"你的二智bb","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1413823,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1413183697","publishTime":0,"alias":[],"type":0,"duration":219156,"name":"追 (翻自 陈壹千) ","id":1413183697},{"status":0,"privilege":{"st":0,"flag":2,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1430872359,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86492646,"name":"想你的时候你在哪","picUrl":"http://p2.music.126.net/UO1uICQfVlFYK2lDDNE7GA==/109951164802892889.jpg","tns":[],"pic_str":"109951164802892889","pic":109951164802892889},"artists":[{"id":33490993,"name":"逸夫","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1430872359","publishTime":0,"alias":[],"type":0,"duration":37779,"name":"你又在哪呢（demo）","id":1430872359},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1421191830,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85503574,"name":"歌手·当打之年 第1期","picUrl":"http://p1.music.126.net/yZN047VYz7selK4LCsi1Zg==/109951164681443868.jpg","tns":[],"pic_str":"109951164681443868","pic":109951164681443868},"artists":[{"id":12138269,"name":"毛不易","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416682,"mvid":0,"transNames":null,"no":4,"commentThreadId":"R_SO_4_1421191830","publishTime":0,"alias":[],"type":0,"duration":275543,"name":"借 (Live)","id":1421191830},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1421859939,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86548876,"name":"流沙","picUrl":"http://p2.music.126.net/cclhJ1muS3K2yf9NjY39tA==/109951164809060789.jpg","tns":[],"pic_str":"109951164809060789","pic":109951164809060789},"artists":[{"id":13113858,"name":"林宝馨","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1421859939","publishTime":0,"alias":[],"type":0,"duration":199461,"name":"流沙","id":1421859939},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1400597273,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":82884041,"name":"鹤壁东","picUrl":"http://p2.music.126.net/71dvNECNay0WLgpNn1OvyA==/109951164463100458.jpg","tns":[],"pic_str":"109951164463100458","pic":109951164463100458},"artists":[{"id":33428669,"name":"韩蒴","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1400597273","publishTime":0,"alias":[],"type":0,"duration":209165,"name":"鹤壁东","id":1400597273},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435486057,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87049799,"name":"源自你","picUrl":"http://p2.music.126.net/V6efiYsszfsNz5ZHQ-Sprg==/109951164853419124.jpg","tns":[],"pic_str":"109951164853419124","pic":109951164853419124},"artists":[{"id":12074125,"name":"ANU","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416503,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1435486057","publishTime":1585584000000,"alias":[],"type":0,"duration":228343,"name":"源自你","id":1435486057},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1417862065,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":83823905,"name":"小王","picUrl":"http://p1.music.126.net/XPPeIZu7wgcGXZ0666mfFg==/109951164640697307.jpg","tns":[],"pic_str":"109951164640697307","pic":109951164640697307},"artists":[{"id":12138269,"name":"毛不易","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416574,"mvid":0,"transNames":null,"no":11,"commentThreadId":"R_SO_4_1417862065","publishTime":0,"alias":[],"type":0,"duration":2615591,"name":"小王日记","id":1417862065},{"status":0,"privilege":{"st":0,"flag":2,"subp":1,"fl":320000,"fee":0,"dl":999000,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1332618500,"pl":320000,"sp":7,"payed":0},"djid":0,"fee":0,"album":{"id":74802562,"name":"丁当","picUrl":"http://p2.music.126.net/rslMMiau5De60p-yaDshQQ==/109951163719748455.jpg","tns":[],"pic_str":"109951163719748455","pic":109951163719748455},"artists":[{"id":14419930,"name":"许彪","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1332618500","publishTime":1544495143066,"alias":[],"type":0,"duration":254975,"name":"丁当","id":1332618500},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1417120347,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85026013,"name":"这就是爱吗","picUrl":"http://p1.music.126.net/LDjY-Ty0cTNWjPlDBFbbHA==/109951164631246497.jpg","tns":[],"pic_str":"109951164631246497","pic":109951164631246497},"artists":[{"id":31051426,"name":"杨胖雨","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416318,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1417120347","publishTime":1579622400000,"alias":[],"type":0,"duration":244858,"name":"这就是爱吗","id":1417120347},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1436926894,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87343512,"name":"你去过你的吧","picUrl":"http://p1.music.126.net/49cZECUPYncqWmcozb9_Mg==/109951164863858267.jpg","tns":[],"pic_str":"109951164863858267","pic":109951164863858267},"artists":[{"id":12264255,"name":"代鑫","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1436926894","publishTime":0,"alias":[],"type":0,"duration":304356,"name":"你去过你的吧","id":1436926894},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1426233208,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86004148,"name":"痛快","picUrl":"http://p2.music.126.net/4d0TEEUvB9vjolovUiB0Vw==/109951164744024471.jpg","tns":[],"pic_str":"109951164744024471","pic":109951164744024471},"artists":[{"id":29235210,"name":"Aioz","tns":[],"alias":[]},{"id":12760523,"name":"董唧唧","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1426233208","publishTime":0,"alias":[],"type":0,"duration":246428,"name":"痛快","id":1426233208},{"status":0,"privilege":{"st":0,"flag":2,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1438174865,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87658227,"name":"BODY LOTION","picUrl":"http://p1.music.126.net/EULzJE5CQ6OX8vVPfX0AyQ==/109951164877268064.jpg","tns":[],"pic_str":"109951164877268064","pic":109951164877268064},"artists":[{"id":12520786,"name":"KUCCI","tns":[],"alias":[]},{"id":12610496,"name":"D.Ark","tns":[],"alias":[]},{"id":12195296,"name":"YOUNG13DBABY","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1438174865","publishTime":0,"alias":[],"type":0,"duration":156226,"name":"Body Lotion","id":1438174865},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":518725853,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":36676066,"name":"313","picUrl":"http://p1.music.126.net/sN5dTpmeJO1DhxIj1ogMLg==/109951163416453597.jpg","tns":[],"pic_str":"109951163416453597","pic":109951163416453597},"artists":[{"id":12606272,"name":"吕大叶","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1403818,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_518725853","publishTime":1508982082767,"alias":[],"type":0,"duration":219277,"name":"篝火旁","id":518725853},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1339645245,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":75148395,"name":"边陲小镇","picUrl":"http://p2.music.126.net/f_D-Y9FEARqwyEacjyIusw==/109951163793476082.jpg","tns":[],"pic_str":"109951163793476082","pic":109951163793476082},"artists":[{"id":13197163,"name":"张目求思","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1339645245","publishTime":1547387402399,"alias":[],"type":0,"duration":277200,"name":"边陲小镇","id":1339645245},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1414038620,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":84702561,"name":"走吧,女孩","picUrl":"http://p1.music.126.net/UE0X5t63piI4s6O0ouOfIQ==/109951164601592801.jpg","tns":[],"pic_str":"109951164601592801","pic":109951164601592801},"artists":[{"id":1086100,"name":"戴盡欢","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416630,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1414038620","publishTime":0,"alias":[],"type":0,"duration":244297,"name":"走吧,女孩","id":1414038620},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1430898876,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86488262,"name":"猫空缆车","picUrl":"http://p2.music.126.net/UNErRjppVrUBEdpNv3D37A==/109951164803313320.jpg","tns":[],"pic_str":"109951164803313320","pic":109951164803313320},"artists":[{"id":33420405,"name":"毛亦周","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1430898876","publishTime":0,"alias":[],"type":0,"duration":162829,"name":"猫空缆车","id":1430898876},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":320000,"fee":0,"dl":999000,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1419634503,"pl":320000,"sp":7,"payed":0},"djid":0,"fee":0,"album":{"id":85324820,"name":"光","picUrl":"http://p2.music.126.net/sFZNgfZrOCYdPKgfMFEstQ==/109951164661855327.jpg","tns":[],"pic_str":"109951164661855327","pic":109951164661855327},"artists":[{"id":34258174,"name":"浙江卫视主持人","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":10912399,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1419634503","publishTime":0,"alias":[],"type":0,"duration":177777,"name":"光","id":1419634503},{"status":0,"privilege":{"st":0,"flag":4,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1429857402,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86393179,"name":"陪你旅行的人","picUrl":"http://p1.music.126.net/Hiub2HQA1gFqr6YetAqpBg==/109951164790597383.jpg","tns":[],"pic_str":"109951164790597383","pic":109951164790597383},"artists":[{"id":14102927,"name":"向洋Nathan","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7002,"mvid":10921098,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1429857402","publishTime":1584028800000,"alias":[],"type":0,"duration":189283,"name":"陪你旅行的人","id":1429857402},{"status":0,"privilege":{"st":0,"flag":4,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1433734307,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86808014,"name":"Hello Goodbye","picUrl":"http://p2.music.126.net/NJ5BU4gC_NJ_qK7gWr7hEA==/109951164836769306.jpg","tns":[],"pic_str":"109951164836769306","pic":109951164836769306},"artists":[{"id":1087592,"name":"唐汉霄","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7002,"mvid":10923315,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1433734307","publishTime":0,"alias":[],"type":0,"duration":239338,"name":"Hello Goodbye","id":1433734307},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1433313929,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86599260,"name":"Dream Wedding","picUrl":"http://p2.music.126.net/MPVSbTCdwOzgk_8hBTxQkw==/109951164831545978.jpg","tns":[],"pic_str":"109951164831545978","pic":109951164831545978},"artists":[{"id":13701182,"name":"Pyb","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1433313929","publishTime":0,"alias":[],"type":0,"duration":125000,"name":"Dream Wedding","id":1433313929,"lastRank":51},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1425757434,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85963839,"name":"曙光","picUrl":"http://p1.music.126.net/cHzJYzXyJqLYgwzGNuRrxw==/109951164738075394.jpg","tns":[],"pic_str":"109951164738075394","pic":109951164738075394},"artists":[{"id":1081967,"name":"张新成","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":436013,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1425757434","publishTime":0,"alias":["电视剧《冰糖炖雪梨》片头曲"],"type":0,"duration":229014,"name":"曙光","id":1425757434},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1406769209,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":83754950,"name":"事关于你","picUrl":"http://p2.music.126.net/n39ZYkxin9F1GgdbxyVwXw==/109951164518634797.jpg","tns":[],"pic_str":"109951164518634797","pic":109951164518634797},"artists":[{"id":33428669,"name":"韩蒴","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1406769209","publishTime":0,"alias":[],"type":0,"duration":117781,"name":"事关于你（demo）","id":1406769209},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1433946294,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86891136,"name":"stay vibrant","picUrl":"http://p2.music.126.net/zAG5tnsbZH16Q2OTsFSNTg==/109951164846089446.jpg","tns":[],"pic_str":"109951164846089446","pic":109951164846089446},"artists":[{"id":1017035,"name":"San Holo","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":722018,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1433946294","publishTime":1585238400000,"alias":[],"type":0,"duration":260750,"name":"(if only i could) hold you","id":1433946294},{"status":0,"privilege":{"st":0,"flag":260,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1396304601,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":82318572,"name":"Lose Control","picUrl":"http://p2.music.126.net/vwsPnFIAZe3DXB6ujaczbw==/109951164420840254.jpg","tns":[],"pic_str":"109951164420840254","pic":109951164420840254},"artists":[{"id":136629,"name":"Meduza","tns":[],"alias":[]},{"id":391079,"name":"Becky Hill","tns":[],"alias":[]},{"id":31385169,"name":"Goodboys","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7003,"mvid":10899176,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1396304601","publishTime":1570723200000,"alias":[],"type":0,"duration":168437,"name":"Lose Control","id":1396304601},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1413377028,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":84645796,"name":"羡慕","picUrl":"http://p1.music.126.net/z3iaVvR-7_DLxzktOu5I3g==/109951164594343426.jpg","tns":[],"pic_str":"109951164594343426","pic":109951164594343426},"artists":[{"id":5771,"name":"许嵩","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416629,"mvid":10909661,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1413377028","publishTime":1577894400000,"alias":[],"type":0,"duration":297642,"name":"羡慕","id":1413377028},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1358848433,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":78505657,"name":"追","picUrl":"http://p1.music.126.net/Ax-zrmAPBrASWxT92t3fdw==/109951164000242827.jpg","tns":[],"pic_str":"109951164000242827","pic":109951164000242827},"artists":[{"id":12077204,"name":"陈壹千","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1358848433","publishTime":0,"alias":[],"type":0,"duration":219827,"name":"追","id":1358848433},{"status":0,"privilege":{"st":0,"flag":64,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1408941731,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":84033640,"name":"Mr. Enjoy Da Money","picUrl":"http://p2.music.126.net/rZ3nrL0fJWBIwGDvj5271Q==/109951164542657247.jpg","tns":[],"pic_str":"109951164542657247","pic":109951164542657247},"artists":[{"id":27868624,"name":"KnowKnow","tns":[],"alias":[]},{"id":12002201,"name":"Higher Brothers","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":722012,"mvid":10906004,"transNames":null,"no":11,"commentThreadId":"R_SO_4_1408941731","publishTime":1576080000000,"alias":[],"type":0,"duration":233846,"name":"R&B All Night","id":1408941731},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1417849885,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":83823905,"name":"小王","picUrl":"http://p2.music.126.net/XPPeIZu7wgcGXZ0666mfFg==/109951164640697307.jpg","tns":[],"pic_str":"109951164640697307","pic":109951164640697307},"artists":[{"id":12138269,"name":"毛不易","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416574,"mvid":0,"transNames":null,"no":7,"commentThreadId":"R_SO_4_1417849885","publishTime":0,"alias":[],"type":0,"duration":233020,"name":"等","id":1417849885},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1401204171,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":83005750,"name":"我在原地等你","picUrl":"http://p2.music.126.net/2gcByiD5IA2mlY3mceiJbw==/109951164469901057.jpg","tns":[],"pic_str":"109951164469901057","pic":109951164469901057},"artists":[{"id":187229,"name":"吴青峰","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416529,"mvid":10900301,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1401204171","publishTime":0,"alias":["电影《我在原地等你》同名主题曲"],"type":0,"duration":273971,"name":"我在原地等你","id":1401204171},{"status":0,"privilege":{"st":0,"flag":66,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1437387815,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87553902,"name":"原谅我真的离不开你","picUrl":"http://p2.music.126.net/vjXmNnE5usKE1jDrslZMXw==/109951164879851314.jpg","tns":[],"pic_str":"109951164879851314","pic":109951164879851314},"artists":[{"id":1021328,"name":"李子阳","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437387815","publishTime":0,"alias":[],"type":0,"duration":245142,"name":"原谅我真的离不开你","id":1437387815},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1414157538,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":84654484,"name":"都市丽人生存报告","picUrl":"http://p2.music.126.net/-4m4tMDLcnksK6Xhiwxd9w==/109951164631207762.jpg","tns":[],"pic_str":"109951164631207762","pic":109951164631207762},"artists":[{"id":33735716,"name":"大籽","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1414157538","publishTime":0,"alias":[],"type":0,"duration":249823,"name":"都市丽人生存报告","id":1414157538},{"status":0,"privilege":{"st":0,"flag":0,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1416772486,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":84991833,"name":"怎么能忘了 (不插电)","picUrl":"http://p2.music.126.net/_RVi0cHgarQYomdbCaDTAQ==/109951164627112165.jpg","tns":[],"pic_str":"109951164627112165","pic":109951164627112165},"artists":[{"id":7424,"name":"程响","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416133,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1416772486","publishTime":1579017600000,"alias":[],"type":0,"duration":148846,"name":"怎么能忘了（不插电）","id":1416772486},{"status":0,"privilege":{"st":0,"flag":4,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1431769288,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86588003,"name":"回放浪漫","picUrl":"http://p2.music.126.net/jQARQRMdFxEOh-S1uC95Yw==/109951164813485378.jpg","tns":[],"pic_str":"109951164813485378","pic":109951164813485378},"artists":[{"id":203248,"name":"郑伟杰Nigel","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7002,"mvid":10921738,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1431769288","publishTime":1584633600000,"alias":[],"type":0,"duration":173792,"name":"回放浪漫","id":1431769288},{"status":0,"privilege":{"st":0,"flag":260,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1437149818,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87537095,"name":"Feel Something","picUrl":"http://p2.music.126.net/C8wFSJ5rFPWQV3dvCa7r3w==/109951164865923302.jpg","tns":[],"pic_str":"109951164865923302","pic":109951164865923302},"artists":[{"id":1050518,"name":"ILLENIUM","tns":[],"alias":[]},{"id":33221,"name":"Excision","tns":[],"alias":[]},{"id":1045109,"name":"I Prevail","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":7003,"mvid":10924723,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1437149818","publishTime":1585843200000,"alias":[],"type":0,"duration":221048,"name":"Feel Something","id":1437149818},{"status":0,"privilege":{"st":0,"flag":2,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1432563193,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":86642256,"name":"当苹果成熟的时候","picUrl":"http://p2.music.126.net/DdEDu5nHQS1TDFgG9AV0cg==/109951164821758875.jpg","tns":[],"pic_str":"109951164821758875","pic":109951164821758875},"artists":[{"id":30958408,"name":"赵壁立","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1432563193","publishTime":0,"alias":[],"type":0,"duration":279692,"name":"当苹果成熟的时候","id":1432563193},{"status":0,"privilege":{"st":0,"flag":4,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":320000,"id":1425099212,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":85909823,"name":"低半度","picUrl":"http://p1.music.126.net/pMwV6WhoL_zEr2OE1Nl5TA==/109951164729476377.jpg","tns":[],"pic_str":"109951164729476377","pic":109951164729476377},"artists":[{"id":9605,"name":"卫兰","tns":[],"alias":[]}],"ftype":0,"score":95.0,"copyrightId":7002,"mvid":10916535,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1425099212","publishTime":1582473600000,"alias":[],"type":0,"duration":252682,"name":"低半度","id":1425099212},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1435422387,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":87040272,"name":"quarantine freestyle","picUrl":"http://p1.music.126.net/oE3INJ651lOjhPsAYaUWbA==/109951164852956200.jpg","tns":[],"pic_str":"109951164852956200","pic":109951164852956200},"artists":[{"id":12054171,"name":"bbno$","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":1416554,"mvid":10924400,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1435422387","publishTime":0,"alias":[],"type":0,"duration":92173,"name":"quarantine freestyle","id":1435422387},{"status":0,"privilege":{"st":0,"flag":68,"subp":1,"fl":128000,"fee":8,"dl":0,"cp":1,"preSell":false,"cs":false,"toast":false,"maxbr":999000,"id":1303289043,"pl":128000,"sp":7,"payed":0},"djid":0,"fee":8,"album":{"id":72363263,"name":"囍（Chinese Wedding）","picUrl":"http://p2.music.126.net/H3Q3SeMVtuHvHY2uyaQdOw==/109951163472855051.jpg","tns":[],"pic_str":"109951163472855051","pic":109951163472855051},"artists":[{"id":12136078,"name":"葛东琪","tns":[],"alias":[]}],"ftype":0,"score":100.0,"copyrightId":0,"mvid":0,"transNames":null,"no":1,"commentThreadId":"R_SO_4_1303289043","publishTime":1534780800000,"alias":[],"type":0,"duration":216705,"name":"囍（Chinese Wedding）","id":1303289043}]</textarea>
+</div>
+<div class="n-cmt" id="comment-box" data-tid="A_PL_0_19723756" data-count="172754"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="g-ft ">
+<div class="m-ft">
+<div class="wrap f-cb">
+<div class="copy">
+<p class="link" id="music-link">
+<a href="//st.music.163.com/official-terms/service" target="_blank" class="item s-fc4">服务条款</a><span class="line">|</span>
+<a href="//st.music.163.com/official-terms/privacy" target="_blank" class="item s-fc4">隐私政策</a><span class="line">|</span>
+<a href="//st.music.163.com/official-terms/children" target="_blank" class="item s-fc4">儿童隐私政策</a><span class="line">|</span>
+<a href="//music.163.com/st/staticdeal/complaints.html" target="_blank" class="item s-fc4">版权投诉指引</a><span class="line">|</span>
+<a id="g_feedback" href="#" class="s-fc4" onclick="nm.x.feedback();return false;" hidefocus="true">意见反馈</a>
+</p>
+<p class="right s-fc3">
+<span class="sep span">网易公司版权所有©1997-2020</span><span class="span">杭州乐读科技有限公司运营：</span><a href="https://p1.music.126.net/Mos9LTpl6kYt6YTutA6gjg==/109951164248627501.png" target="_blank" class="alink s-fc3">浙网文[2018]3506-263号</a>
+</p>
+<p class="contact s-fc3">
+<span class="sep span">违法和不良信息举报电话：0571-89853516</span>
+<span class="span">举报邮箱：</span><a class="alink" href="mailto:ncm5990@163.com">ncm5990@163.com</a>
+</p>
+<p class="right s-fc3">
+<span class="sep span">粤B2-20090191-18</span><a href="http://www.beian.miit.gov.cn/publish/query/indexFirst.action" rel="noopener noreferrer" target="_blank" class="alink s-fc3">工业和信息化部备案管理系统网站</a>
+</p>
+</div>
+<ul class="enter f-fr">
+<li class="unit">
+<a class="logo logonew logo-auth f-tid" href="//music.163.com/st/userbasic#/auth" target="_blank"></a>
+<span class="tt tt-auth"></span>
+</li>
+<li class="unit">
+<a class="logo logonew logo-musician f-tid" href="//music.163.com/recruit" target="_blank"></a>
+<span class="tt tt-musician"></span>
+</li>
+<li class="unit">
+<a class="logo logonew logo-reward f-tid" href="//music.163.com/web/reward" target="_blank"></a>
+<span class="tt tt-reward"></span>
+</li>
+<li class="unit">
+<a class="logo logonew logo-cash f-tid" href="//music.163.com/uservideo#/plan" target="_blank"></a>
+<span class="tt tt-cash"></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+var imgconfig = ""
+var links = document.getElementById("music-link");
+document.getElementById("g_feedback").className="item s-fc4";
+var itemlink = document.createElement("a");
+itemlink.className="s-fc4";
+itemlink.innerHTML="";
+itemlink.onclick=function() {
+var path = "https://st.qa.igame.163.com";
+if (window.location.href.indexOf("music.163.com") > -1) {
+path = "https://st.music.163.com";
+}
+window.open(path+"/itempage/item.html?img="+encodeURIComponent(imgconfig));
+}
+var span = document.createElement("span");
+span.className="line";
+span.innerHTML="|";
+links.append(span);
+links.append(itemlink);
+</script>
+<a title="回到顶部" class="m-back" href="#" id="g_backtop" hidefocus="true" style="display:none;">回到顶部</a>
+<div id="template-box" style="display:none;"> <textarea name="ntp" id="m-wgt-selector" style="display:none;"><div class="u-slt f-pr"><span class="curr f-thide"></span><i class="btn"></i><ul></ul></div>
+</textarea>
+<textarea name="jst" id="m-wgt-selector-list" style="display:none;">{list data as x}<li class="f-thide"><a href="#" data-value="${x.v}" title="${x.t}">${x.t}</a></li>{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-create" style="display:none;"><div class="lyct m-crgd f-cb f-tc">
+<p>歌单名：<input type="text" class="u-txt j-flag"></p>
+<div class="u-err f-vhide j-flag"><i class="u-icn u-icn-25"></i>错误提示</div>
+<p class="tip s-fc4">可通过“收藏”将音乐添加到新歌单中</p>
+<div class="btn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true"><i>新 建</i></a>
+<a href="javascript:;" class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true"><i>取 消</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment" style="display:none;"><div class="u-title u-title-1">
+<h3><span class="f-ff2">评论</span></h3><span class="sub s-fc3">共<span class="j-flag">0</span>条评论</span>
+</div>
+<div class="m-cmmt">
+<div class="iptarea">
+<div class="head"><img src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=50y50"></div>
+<div class="j-flag"></div>
+</div>
+<div class="cmmts j-flag"></div>
+<div class="j-flag"></div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment2" style="display:none;"><div class="m-dynamic">
+<div class="dbox dbox-cmt">
+<span class="darr"><i class="bd">◆</i><i class="bg">◆</i></span>
+<div class="m-cmmt m-cmmt-s">
+<div class="iptarea j-flag">
+</div>
+<div class="cmmts">
+<div class="j-flag"></div>
+<div class="dmore dmore-cmt f-cb">
+<div class="dhas s-fc3">后面还有<span class="j-flag">0</span>条评论，<a data-type="viewmore" class="s-fc3 f-ff1" href="javascript:void(0)">查看更多&gt;</a></div>
+<a data-type="cc" class="dtoggle" href="javascript:void(0)">收起<i data-type="cc" class="u-icn u-icn-61"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-comment3" style="display:none;"><div class="dcmt">
+<p><span class="f-fw1">评论</span> (<span class="j-flag"></span>)</p>
+<div class="m-cmmt m-cmmt-s">
+<div class="iptarea j-flag">
+</div>
+<div class="cmmts j-flag">
+</div>
+<div class="j-flag">
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-comment-item" style="display:none;"> {list beg..end as y}
+{var x=xlist[y]}
+{if !!x}
+<div id="${x.commentId|seed}" class="itm" data-id="${x.commentId}">
+<div class="head">
+<a href="/user/home?id=${x.user.userId}"><img src="${x.user.avatarUrl}?param=50y50"></a>
+</div>
+<div class="cntwrap">
+<div class="">
+<div class="cnt f-brk">
+<a href="/user/home?id=${x.user.userId}" class="s-fc7">${escape(x.user.nickname)}</a>
+${getAuthIcon(x.user)}
+{if x.user.vipRights}
+{if x.user.vipRights.associator && x.user.vipRights.associator.rights}
+{if x.user.vipRights.redVipAnnualCount >= 1}
+<img src="//p1.music.126.net/y8pM-M1mytg6B1ThedCbJA==/109951163709550847.png" class="brand-tag brand-vip"/>
+{else}
+<img src="//p1.music.126.net/iOnYL-pAvH2LuQfStGOjfQ==/109951163709553273.png"
+class="brand-tag brand-vip" />
+{/if}
+{elseif x.user.vipRights.musicPackage && x.user.vipRights.musicPackage.rights}
+<img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" />
+{/if}
+{/if}
+{if !!x.beRepliedUser}
+&nbsp;回复&nbsp;<a href="/user/home?id=${x.beRepliedUser.userId}" class="s-fc7">${escape(x.beRepliedUser.nickname)}</a>
+${getAuthIcon(x.beRepliedUser)}
+{if x.beRepliedUser.vipRights}
+{if x.beRepliedUser.vipRights.associator && x.beRepliedUser.vipRights.associator.rights}
+{if x.beRepliedUser.vipRights.redVipAnnualCount >= 1}
+<img src="//p1.music.126.net/y8pM-M1mytg6B1ThedCbJA==/109951163709550847.png" class="brand-tag brand-vip"/>
+{else}
+<img src="//p1.music.126.net/iOnYL-pAvH2LuQfStGOjfQ==/109951163709553273.png"
+class="brand-tag brand-vip" />
+{/if}
+{elseif x.beRepliedUser.vipRights.musicPackage && x.beRepliedUser.vipRights.musicPackage.rights}
+<img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" />
+{/if}
+{/if}
+{/if}
+：${getRichText(escape(x.content),'s-fc7')}
+{if !!x.expressionUrl}
+<div class="u-expression"><img src="${x.expressionUrl}?param=70y70"></img></div>
+{/if}
+</div>
+</div>
+{if x.beReplied&&x.beReplied.length}
+{var replied = x.beReplied[0]}
+<div class="que f-brk f-pr s-fc3">
+<span class="darr"><i class="bd">◆</i><i class="bg">◆</i></span>
+{if (replied && replied.status!=-5) && (replied.content || replied.expressionUrl)}
+<a class="s-fc7" href="/user/home?id=${replied.user.userId}">${replied.user.nickname}${getAuthIcon(replied.user)}</a>
+{if replied.user.vipRights}
+{if replied.user.vipRights.associator && replied.user.vipRights.associator.rights}
+{if replied.user.vipRights.redVipAnnualCount >= 1}
+<img src="//p1.music.126.net/y8pM-M1mytg6B1ThedCbJA==/109951163709550847.png" class="brand-tag brand-vip"/>
+{else}
+<img src="//p1.music.126.net/iOnYL-pAvH2LuQfStGOjfQ==/109951163709553273.png"
+class="brand-tag brand-vip" />
+{/if}
+{elseif replied.user.vipRights.musicPackage && replied.user.vipRights.musicPackage.rights}
+<img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" />
+{/if}
+{/if}
+：${getRichText(escape(replied.content),'s-fc7')}
+{if !!replied.expressionUrl}
+<div class="u-expression"><img src="${replied.expressionUrl}?param=70y70"></img></div>
+{/if}
+{else}
+该评论已删除
+{/if}
+</div>
+{/if}
+<div class="rp">
+<div class="time s-fc4">${timeformat(x.time)}</div>
+{if x.topCommentId}<span class="top">音乐人置顶</span>{/if}
+{if canTop()&&GUser&&GUser.userId&&(GUser.userId==x.user.userId)}
+<span class="dlt">{if x.topCommentId}<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-tid="${x.topCommentId}" data-type="canceltop">解除置顶</a>{else}<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="gotop">置顶评论</a>{/if}<span class="sep">|</span></span>
+{/if}
+{if GUser&&GUser.userId&&(GUser.userId==x.user.userId||GUser.userId==resUserId)}
+<span class="dlt"><a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" {if x.topCommentId}data-tid="${x.topCommentId}" {/if}data-type="delete">删除</a><span class="sep">|</span></span>
+{/if}
+{if GAllowRejectComment}
+{if hot||!x.isRemoveHotComment}
+<span class="dlt"><a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reject">移除精彩评论</a><span class="sep">|</span></span>
+{else}
+<span class="s-fc3">已移除精彩评论</span><span class="sep">|</span>
+{/if}
+{/if}
+{if !x.topCommentId}<a data-id="${x.commentId}" data-type="{if !x.liked}like{else}unlike{/if}" href="javascript:void(0)"><i class="zan u-icn2 u-icn2-{if x.liked}13{else}12{/if}"></i>{if x.likedCount} (${getPlayCount(x.likedCount)}){/if}</a>
+<span class="sep">|</span>{/if}
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reply">回复</a>
+</div>
+</div>
+</div>
+{/if}
+{/list}
+</textarea>
+<textarea name="jst" id="m-wgt-comment-item-2" style="display:none;"> {list beg..end as y}
+{var x=xlist[y]}
+<div class="itm" data-id="${x.commentId}">
+<div class="head">
+<a href="/user/home?id=${x.user.userId}"><img src="${x.user.avatarUrl}?param=50y50"></a>
+</div>
+<div class="cntwrap">
+<div class="cnt2 f-brk">
+<a href="/user/home?id=${x.user.userId}" class="s-fc7">${escape(x.user.nickname)}</a>
+${getAuthIcon(x.user)}
+{if x.user.vipRights}
+{if x.user.vipRights.associator && x.user.vipRights.associator.rights}
+{if x.user.vipRights.redVipAnnualCount >= 1}
+<img src="//p1.music.126.net/y8pM-M1mytg6B1ThedCbJA==/109951163709550847.png" class="brand-tag brand-vip"/>
+{else}
+<img src="//p1.music.126.net/iOnYL-pAvH2LuQfStGOjfQ==/109951163709553273.png"
+class="brand-tag brand-vip" />
+{/if}
+{elseif x.user.vipRights.musicPackage && x.user.vipRights.musicPackage.rights}
+<img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" />
+{/if}
+{/if}
+{if !!x.beRepliedUser}
+&nbsp;回复&nbsp;<a href="/user/home?id=${x.beRepliedUser.userId}" class="s-fc7">${escape(x.beRepliedUser.nickname)}</a>
+${getAuthIcon(x.beRepliedUser)}
+{if x.beRepliedUser.vipRights}
+{if x.beRepliedUser.vipRights.associator && x.beRepliedUser.vipRights.associator.rights}
+{if x.beRepliedUser.vipRights.redVipAnnualCount >= 1}
+<img src="//p1.music.126.net/y8pM-M1mytg6B1ThedCbJA==/109951163709550847.png" class="brand-tag brand-vip"/>
+{else}
+<img src="//p1.music.126.net/iOnYL-pAvH2LuQfStGOjfQ==/109951163709553273.png"
+class="brand-tag brand-vip" />
+{/if}
+{elseif x.beRepliedUser.vipRights.musicPackage && x.beRepliedUser.vipRights.musicPackage.rights}
+<img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" />
+{/if}
+{/if}
+{/if}
+：${getRichText(escape(x.content),'s-fc7')}
+{if !!x.expressionUrl}
+<div class="u-expression"><img src="${x.expressionUrl}?param=70y70"></img></div>
+{/if}
+</div>
+{if x.beReplied&&x.beReplied.length}
+{var replied = x.beReplied[0]}
+<div class="que f-brk f-pr s-fc3">
+<span class="darr"><i class="bd">◆</i><i class="bg">◆</i></span>
+{if replied&&replied.content}
+<a class="s-fc7" href="/user/home?id=${replied.user.userId}">${replied.user.nickname}${getAuthIcon(replied.user)}</a>
+{if replied.user.vipRights}
+{if replied.user.vipRights.associator && replied.user.vipRights.associator.rights}
+{if replied.user.vipRights.redVipAnnualCount >= 1}
+<img src="//p1.music.126.net/y8pM-M1mytg6B1ThedCbJA==/109951163709550847.png" class="brand-tag brand-vip"/>
+{else}
+<img src="//p1.music.126.net/iOnYL-pAvH2LuQfStGOjfQ==/109951163709553273.png"
+class="brand-tag brand-vip" />
+{/if}
+{elseif replied.user.vipRights.musicPackage && replied.user.vipRights.musicPackage.rights}
+<img src="//p1.music.126.net/G2KYG9JjrGGP5grSaXOZaw==/109951163309837705.png"
+class="brand-tag brand-package" />
+{/if}
+{/if}
+：${getRichText(escape(replied.content),'s-fc7')}
+{else}
+该评论已删除
+{/if}
+</div>
+{/if}
+<div class="rp">
+<div class="time s-fc4">${timeformat(x.time)}</div>
+{if GUser&&GUser.userId&&(GUser.userId==x.user.userId||GUser.userId==resUserId)}
+<span class="dlt">
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="delete">删除</a><span class="sep">|</span>
+</span>
+{/if}
+<a data-id="${x.commentId}" data-type="{if !x.liked}like{else}unlike{/if}" href="javascript:void(0)"><i class="zan u-icn2 u-icn2-{if x.liked}13{else}12{/if}"></i>{if x.likedCount} (${getPlayCount(x.likedCount)}){/if}</a>
+<span class="sep">|</span>
+<a href="javascript:void(0)" class="s-fc3" data-id="${x.commentId}" data-type="reply">回复</a>
+</div>
+</div>
+</div>
+{/list}
+</textarea>
+<textarea name="jst" id="m-wgt-input-1" style="display:none;"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" data-type="" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a href="javascript:void(0)" class="btn u-btn u-btn-1 j-flag">评论</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+<div class="corr u-arr"><em class="arrline">◆</em><span class="arrclr">◆</span></div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-2" style="display:none;"> <div class="rept m-quk m-quk-1 f-pr">
+<div class="iner">
+<div class="corr u-arr u-arr-1"><em class="arrline">◆</em><span class="arrclr">◆</span></div>
+<div class="m-cmmtipt m-cmmtipt-1 f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr j-wrap">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a href="javascript:void(0)" class="btn u-btn u-btn-1 j-flag">回复</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-3" style="display:none;"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)">回复</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-4" style="display:none;"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap f-pr">
+<textarea class="u-txt area j-flag"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag" style="display:none;"></i>
+<a class="f-fr u-btn u-btn-1 j-flag" href="javascript:void(0)">发送</a><span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-5" style="display:none;"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)">评论</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-input-6" style="display:none;"> <div class="m-cmmtipt f-cb f-pr">
+<div class="u-txtwrap holder-parent f-pr">
+<textarea class="u-txt area j-flag" placeholder="${placeholder}"><&#47;textarea>
+</div>
+<div class="btns f-cb f-pr">
+<i class="icn u-icn u-icn-36 j-flag"></i><i class="icn u-icn u-icn-41 j-flag"></i>
+<a class="btn u-btn u-btn-1 j-flag" href="javascript:void(0)">发送</a>
+<span class="zs s-fc4 j-flag">110/120</span>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-wgt-subscribe" style="display:none;"><div class="lyct lyct-1 m-favgd f-cb">
+<div class="tit j-flag"><i class="u-icn u-icn-33"></i>新歌单</div>
+<div class="j-flag">
+<div class="u-load s-fc4"><i class="icn"></i> 加载中...</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-subscribe-item" style="display:none;"><ul>
+{list beg..end as y}
+{var x=xlist[y]}
+<li data-id="${x.id}" class="xtag {if x.trackCount+size>10000}dis{/if}">
+<div class="item f-cb">
+<div class="left">
+<a href="javascript:void(0)" class="avatar" target="_blank">
+<img alt="" src="${x.coverImgUrl}?param=40y40">
+{if x.highQuality}<i class="u-jp u-icn2 u-icn2-jp5"></i>{/if}
+</a>
+</div>
+<p class="name f-thide"><a class="s-fc0" href="javascript:void(0)" target="_blank">${escape(cutStr(x.name,40))}</a></p>
+<p class="s-fc3">${x.trackCount}首</p>
+{if x.trackCount+size>10000}<p class="limit">歌单已满</p>{/if}
+</div>
+</li>
+{/list}
+</ul>
+</textarea>
+<textarea name="ntp" id="m-wgt-forward" style="display:none;"><div class="lyct lyct-1 f-cb">
+<div class="m-lyshare">
+<div class="u-txtwrap f-pr">
+<label style="display: block;" class="j-flag">说点什么</label>
+<textarea class="u-txt area j-flag" text = ><&#47;textarea>
+</div>
+<div class="oper f-cb j-flag">
+<div class="face f-fl f-pr">
+<i class="u-icn u-icn-36 f-fl j-flag"></i>
+<i class="u-icn u-icn-41 j-flag"></i>
+</div>
+<span class="zs f-fr s-fc3 j-flag">140</span>
+</div>
+<div class="btnwrap">
+<a class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="#"><i>转发</i></a>
+<a class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true" href="#"><i>取消</i></a>
+</div>
+<div class="j-flag u-err"><i class="u-icn u-icn-25"></i><span></span></div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-import-ok" style="display:none;"><div class="lyct f-cb f-tc">
+<p class="f-fs3 f-ff2"><i class="u-icn u-icn-76"></i>&nbsp;&nbsp;歌曲同步完成</p>
+<div class="lybtn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 j-flag" hidefocus="true"><i>查看我的音乐</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-atlist" style="display:none;"> <div class="u-atlist">
+{if suggests.length == 0}
+<p>轻敲空格完成输入</p>
+{else}
+<p>选择最近@的人或直接输入</p>
+{/if}
+<div class="lst">
+{list suggests as suggest}
+<a href="javascript:;" data-index=${suggest_index} class="f-thide j-sgt">${suggest.nickname}</a>
+{/list}
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-receiverInput" style="display:none;"> <div class="ct f-pr">
+<div class="u-txtwrap f-pr">
+<div class="u-txt txtwrap j-flag">
+{if receiver}
+<div class="blk s-fc3 j-receiver">${receiver.nickname}<a href="#" class="cls" title="删除">&times;</a></div>
+{/if}
+<span class="holder-parent j-flag" style="float:left">
+<input type="text" class="txt j-flag" />
+<label class="holder j-flag">选择或输入好友昵称</label>
+</span>
+</div>
+</div>
+<ul class="full j-flag" style="_height:182px;display:none">
+{list users as user}
+<li class="j-item" data-userId=${user.userId} data-username=${user.nickname} data-index=${user_index}><a href="#"><img src=${user.avatarUrl}>${user.nickname}</a></li>
+{/list}
+</ul>
+<div class="j-flag" style="position:absolute;left: -1000px;width:auto;"></div>
+</div>
+</textarea>
+<textarea name="jst" id="m-wgt-receiverList" style="display:none;"> {list users as user}
+<li class="j-item" data-userId=${user.userId} data-username=${user.nickname} data-index=${user_index}><a href="#"><img src=${user.avatarUrl}>${user.nickname}</a></li>
+{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-sharewin" style="display:none;"><div class="lyct lyct-1 f-cb">
+<div class="m-lyshare">
+<ul class="m-tabs1 j-flag">
+<li><a href="#"><em>分享给大家</em></a></li>
+<li><a href="#"><em>私信分享</em></a></li>
+</ul>
+<div class="u-err j-flag" style="display:none">最多选择10位好友</div>
+<div class="j-flag"></div>
+<div class="j-slogan"></div>
+<div class="u-txtwrap f-pr">
+<textarea class="u-txt area j-flag" placeholder="说点什么吧" data-action="txt"><&#47;textarea>
+<div class="info f-pr j-flag" data-action="search"></div>
+</div>
+<div class="oper f-cb">
+<div class="face f-fl f-pr">
+<i class="u-icn u-icn-36 f-fl j-flag" data-action="emot"></i>
+<i class="u-icn u-icn-41 f-fl j-flag" data-action="at"></i>
+<i class="u-icn u-icn-97 j-flag f-pr" data-action="upload" data-default></i>
+</div>
+<span class="f-fr s-fc4 j-flag">140/140</span>
+</div>
+<div class="f-cb j-flag"></div>
+<div class="f-cb">
+<div class="btnwrap f-fl">
+<a class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="javascript:;" data-action="share"><i>分享</i></a>
+<a class="u-btn2 u-btn2-1 u-btn2-w2 j-flag" hidefocus="true" href="javascript:;" data-action="close"><i>取消</i></a>
+</div>
+<div class="f-cb j-flag f-fr">
+<div class="share f-fr">
+<span class="f-fl s-fc3">同时分享到：</span>
+<ul class="u-logo u-logo-s f-cb">
+<li><a class="u-slg u-slg-sn j-t" data-action="sns" data-type="2" hidefocus="true" href="//music.163.com/api/sns/authorize?snsType=2&clientType=web2&callbackType=Binding&forcelogin=true" title="新浪微博"></a></li>
+<li><a class="u-slg u-slg-db j-t" data-action="sns" data-type="3" hidefocus="true" href="//music.163.com/api/sns/authorize?snsType=3&clientType=web2&callbackType=Binding&forcelogin=true" title="豆瓣网"></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="u-err j-flag"><i class="u-icn u-icn-25"></i><span></span></div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-search-suggest" style="display:none;">{macro listArtists(artists)}
+{list artists as art}
+${art.name|mark}&nbsp;
+{/list}
+{/macro}
+<div class="m-schlist">
+<p class="note s-fc3"><a class="s-fc3 xtag" href="/search/#/?s=${keyword}&type=1002">搜“${keyword|cutStr}” 相关用户</a> &gt;</p>
+<div class="rap">
+{list result.order as index}
+{var lst=result[index]}
+{if !!lst&&!!lst.length}
+<div class="itm f-cb">
+{if index=="songs"}
+<h3 class="hd"><i class="icn u-icn u-icn-26"></i><em class="f-fl">单曲</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as song}
+<li><a class="s-fc0 f-thide xtag" href="/song?id=${song.id}">${song.name|mark}-${listArtists(song.artists)}</a></li>
+{/list}
+</ul>
+{elseif index=="artists"}
+<h3 class="hd"><i class="icn u-icn u-icn-27"></i><em class="f-fl">歌手</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as artist}
+<li><a class="s-fc0 f-thide xtag" href="/artist?id=${artist.id}">${artist.name|mark}</a></li>
+{/list}
+</ul>
+{elseif index=="albums"}
+<h3 class="hd"><i class="icn u-icn u-icn-28"></i><em class="f-fl">专辑</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as album}
+<li><a class="s-fc0 f-thide xtag" href="/album?id=${album.id}">${album.name|mark}{if album.artist}-${album.artist.name|mark}{/if}</a></li>
+{/list}
+</ul>
+{elseif index=="playlists"}
+<h3 class="hd"><i class="icn u-icn u-icn-29"></i><em class="f-fl">歌单</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as playlist}
+<li><a class="s-fc0 f-thide xtag" href="/playlist?id=${playlist.id}">${playlist.name|mark}</a></li>
+{/list}
+</ul>
+{elseif index=="mvs"}
+<h3 class="hd"><i class="icn u-icn u-icn-96"></i><em class="f-fl">视频</em></h3>
+<ul class="{if index_index%2!=0}odd{/if} f-cb">
+{list lst as mv}
+<li><a class="s-fc0 f-thide xtag" href="/mv?id=${mv.id}">MV:${mv.name|mark}{if mv.artistName}-${mv.artistName|mark}{/if}</a></li>
+{/list}
+</ul>
+{/if}
+</div>
+{/if}
+{/list}
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-xwgt-share-infobar" style="display:none;"><i class="highlight"></i><div class="text f-fl f-fs1"><p class="f-thide">${info|escape}</p></div>
+{if canChange}<i class="f-fr icn u-icn2 u-icn2-arr"></i>{/if}
+</textarea>
+<textarea name="jst" id="m-xwgt-share-videobar" style="display:none;"><div class="text">
+<div class="cvr f-fl f-pr" style="background-image:url(${picUrl}?imageView&thumbnail=107x60),url(${picUrl}?imageView&thumbnail=107y60&blur=30x15)">
+</div>
+<h3 class="f-thide f-fs1">${title}</h3>
+<i class="f-fr icn u-icn2 u-icn2-arr"></i>
+</div>
+</textarea>
+<textarea name="ntp" id="m-xwgt-share-upload" style="display:none;"> <div class="f-pr choose f-cb">
+<ul class="pics f-pr f-cb j-flag"><li class="f-pr add j-flag u-icn2 u-icn2-addimg" title="添加新图片"></li></ul>
+<div class="f-pa tip s-fc6 j-flag"></div>
+</div>
+</textarea>
+<textarea name="jst" id="m-xwgt-share-upload-preview" style="display:none;"> <li class="pic f-pr{if fail} z-fail{/if}">
+{if !fail}
+<i class="f-img icn"></i>
+{else}
+<div class="mask f-blk f-pa"></div><div class="f-blk f-pa error">${fail}</div>
+{/if}
+<span class="del f-pa u-icn2 u-icn2-delimg" title="删除"></span>
+</li>
+</textarea>
+<textarea name="jst" id="m-xwgt-share-upload-preview-img" style="display:none;">{if !fail}
+<img class="f-img" src="${url}?imageView&thumbnail=80y80" draggable=false>
+{else}
+<div class="mask f-blk f-pa"></div><div class="f-blk f-pa error">${fail}</div>
+{/if}
+</textarea>
+<textarea name="ntp" id="ntp-alert" style="display:none;"><div class="lyct f-cb f-tc">
+<p class="f-fs1">
+<i class="u-icn u-icn-89 j-flag"></i>
+<span class="f-fw1">&nbsp;&nbsp;&nbsp;<span class="j-flag"></span></span>
+</p>
+<p class="mesg j-flag">&nbsp;</p>
+<div class="lybtn">
+<a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true"><i>知道了</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-layer-commwin" style="display:none;"><div class="lyct f-tc">
+<p class="j-t"><i class="u-icn u-icn-90"></i></p>
+<p class="j-t msg1"></p>
+</div>
+<div class="j-t lsbtn f-tc">
+<a href="javascript:;" class="u-btn2 u-btn2-2 u-btn2-w2" hidefocus="true"><i>上传节目</i></a>
+</div>
+</textarea>
+<textarea name="ntp" id="m-layer-delwin" style="display:none;"><div class="lyct lyct-1 f-cb">
+<div class="n-log2 n-log2-4">
+<p class="js-tip u-tip-2"></p>
+<div class="lybtn f-tc">
+<a href="javascript:;" class="u-btn2 u-btn2-2" hidefocus="true" data-action="ok"><i>删除</i></a>
+<a href="javascript:;" class="u-btn2 u-btn2-1" hidefocus="true" data-action="cancel"><i>取消</i></a>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-layer-termconfirm" style="display:none;"><div class="m-layer-termconfirm">
+<div class="termconfirm-modal">
+<div class="termconfirm-head">
+服务条款和隐私政策更新
+</div>
+<div class="termconfirm-body">
+服务条款
+</div>
+<div class="termconfirm-foot">
+<a href="javascript:;" class="btn btn-confirm" hidefocus="true" data-action="ok"><i>同意</i></a>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-layer-commwin-btn" style="display:none;">{list buttons as item}
+<a hidefocus="true" class="u-btn2 ${item.klass} {if item.style}${item.style}{else}u-btn2-w2{/if}" href="#" {if !!item.action}data-action="${item.action}"{/if}><i>${item.text}</i></a>
+{/list}
+</textarea>
+<textarea name="ntp" id="m-layer-outershare" style="display:none;"><div class="lyct lyct-1">
+<ul class="n-outshr f-cb">
+<li>
+<a href="#" data-action="wxfrd" class="logo wxfrd"></a>
+<a href="#" data-action="wxfrd" class="wd">微信</a>
+</li>
+<!--
+<li>
+<a href="#" data-action="wxevt" class="logo wxevt"></a>
+<a href="#" data-action="wxevt" class="wd">微信朋友圈</a>
+</li>
+-->
+<li>
+<a href="#" data-action="yxfrd" class="logo yxfrd"></a>
+<a href="#" data-action="yxfrd" class="wd">易信</a>
+</li>
+<!--
+<li>
+<a href="#" data-action="yxevt" class="logo yxevt"></a>
+<a href="#" data-action="yxevt" class="wd">易信朋友圈</a>
+</li>
+-->
+<li>
+<a href="#" data-action="qzone" class="logo qzone"></a>
+<a href="#" data-action="qzone" class="wd">QQ空间</a>
+</li>
+<li>
+<a href="#" data-action="lofte" class="logo lofte"></a>
+<a href="#" data-action="lofte" class="wd">LOFTER</a>
+</li>
+</ul>
+</div>
+</textarea>
+<textarea name="ntp" id="m-layer-tip" style="display:none;"><div class="lyct f-cb f-tc">
+<div class="f-fs1 j-flag">message</div>
+<div class="lybtn">
+<a hidefocus="true" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" href="javascript:;"><i>知道了</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-outshare-layer" style="display:none;"><div class="lyct lyct-1 f-cb">
+<ul class="m-shareto f-cb j-flag">
+<li class="fst" data-action="sn" data-type="2">
+<a href="#" class="logo logo-sn"></a>
+<a href="#" class="wd s-fc3">新浪微博</a>
+</li>
+<li data-action="tx" data-type="6" style="display:none;">
+<a href="#" class="logo logo-tc"></a>
+<a href="#" class="wd s-fc3">腾讯微博</a>
+</li>
+<li data-action="db" data-type="3">
+<a href="#" class="logo logo-db"></a>
+<a href="#" class="wd s-fc3">豆瓣</a>
+</li>
+</ul>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-sharesingle-layer" style="display:none;"><div class="lyct lyct-1 f-cb">
+<div class="m-lyshare">
+<div class="u-txtwrap f-pr">
+<textarea data-action="txt" class="u-txt area j-flag"><&#47;textarea>
+</div>
+<div class="oper f-cb">
+<div class="face f-fl f-pr j-flag">
+<i data-action="emt" class="u-icn u-icn-36 f-fl"></i>
+</div>
+<span class="zs f-fr s-fc3 j-flag">140</span>
+</div>
+<div class="btnwrap">
+<a data-action="ok" class="u-btn2 u-btn2-2 u-btn2-w2 j-flag" hidefocus="true" href="#"><i>分享</i></a>
+<a data-action="cc" class="u-btn2 u-btn2-1 u-btn2-w2" hidefocus="true" href="#"><i>取消</i></a>
+</div>
+<div class="u-err f-hide j-flag"><i class="u-icn u-icn-25"></i></div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-popup-info" style="display:none;"><div class="lyct f-tc">
+<div class="f-cb m-tipinfo">
+<i class="u-icn2 u-icn2-11 f-fl"></i>
+<div class="f-fr f-pr f-fs1 tip">${tip}</div>
+</div>
+</div>
+<div class="lsbtn f-tc">
+<a data-action="ok" href="javascript:void(0)" class="u-btn2 u-btn2-2 u-btn2-2-h {if oktext.length<=2}u-btn2-w2{/if}" hidefocus="true"><i>${oktext}</i></a>
+<a data-action="cc" href="javascript:void(0)" hidefocus="true" class="u-btn2 u-btn2-1 u-btn2-1-h {if cctext.length<=2}u-btn2-w2{/if}"><i>${cctext}</i></a>
+</div>
+</textarea>
+<textarea name="jst" id="m-popup-song-buy" style="display:none;"><div class="lyct m-songpay f-tc">
+<div class="f-cb m-tipinfo">
+<i class="u-icn2 u-icn2-11 f-fl"></i>
+<div class="f-fr f-pr f-fs1 tip">${tip}</div>
+</div>
+<div class="f-pr f-tc">
+<a data-action="ok" href="javascript:void(0)" class="u-btn2 u-btn2-2 {if oktext.length<=2}u-btn2-w2{/if}" hidefocus="true"><i>${oktext}</i></a>
+{if showSongText}<a data-action="song" class="song s-fc4" href="javascript:void(0)">${songTxt}</a>{/if}
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="m-popup-alert" style="display:none;"><div class="lyct f-tc">
+<p><i class="${icon}"></i></p>
+<p class="msg1"><span class="f-fs1 s-fc1">${tip}</span></p>
+</div>
+<div class="lsbtn f-tc">
+{if typeof(oktext) != 'undefined'}<a data-action="ok" href="javascript:void(0)" class="u-btn2 u-btn2-2 u-btn2-2-h {if oktext.length<=2}u-btn2-w2{/if}" hidefocus="true"><i>${oktext}</i></a>{/if}
+{if typeof(cctext) != 'undefined'}<a data-action="cc" href="javascript:void(0)" class="u-btn2 u-btn2-1 u-btn2-1-h {if cctext.length<=2}u-btn2-w2{/if}" hidefocus="true"><i>${cctext}</i></a>{/if}
+</div>
+</textarea>
+<textarea name="txt" id="m-donate-tip" style="display:none;"><p>该资源为公益歌曲<p>
+<p>捐赠任意金额（2~4999元）即可无限畅听下载</p>
+</textarea>
+<textarea name="ntp" id="m-simple-share-layer" style="display:none;"> <div class="lyct lyct-1">
+<ul class="n-outshr f-cb">
+<li data-type="xlwb">
+<a href="javascript:;" class="logo xlwb"></a>
+<a href="javascript:;" class="wd">新浪微博</a>
+</li>
+<li data-type="wx">
+<a href="javascript:;" class="logo wxfrd"></a>
+<a href="javascript:;" class="wd">微信</a>
+</li>
+<li data-type="yx">
+<a href="javascript:;" class="logo yxfrd"></a>
+<a href="javascript:;" class="wd">易信好友</a>
+</li>
+<li data-type="qzone">
+<a href="javascript:;" class="logo qzone"></a>
+<a href="javascript:;" class="wd">QQ空间</a>
+</li>
+<li data-type="lofter" style="display:none;">
+<a href="javascript:;" class="logo lofte"></a>
+<a href="javascript:;" class="wd">LOFTER</a>
+</li>
+<li data-type="db" style="display:none;">
+<a href="javascript:;" class="logo db"></a>
+<a href="javascript:;" class="wd">豆瓣</a>
+</li>
+</ul>
+</div>
+</textarea>
+<textarea name="txt" id="m-report-point" style="display:none;"><div class="zcnt">
+<div class="lyct f-cb f-tc">
+<p class="f-fs2">悬赏1积分让大家来帮你补歌词，是否继续？</p>
+<p style="padding-top: 10px;">若30天内歌词未补充，积分将退还给您</p>
+<div class="lybtn">
+<a href="javascript:;" data-action="ok" class="u-btn2 u-btn2-2 u-btn2-w2" hidefocus="true"><i>继续求</i></a>
+<a href="javascript:;" data-action="cc" class="u-btn2 u-btn2-1 u-btn2-w2" hidefocus="true"><i>取消</i></a>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="txt" id="txt-mobilestatus" style="display:none;"><div class="box f-cb">
+<div data-action="invalid" class="item z-first f-fl">
+<div class="icon"></div>
+<p>原手机号已停用</p>
+<p class="s-fc3">(使用其他方式验证)</p>
+</div>
+<div data-action="valid" class="item f-fr">
+<div class="icon"></div>
+<p>原手机号仍能使用</p>
+<p class="s-fc3">(使用手机验证码验证)</p>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="jst-mobilethirdaccount" style="display:none;"><div class="box f-cb f-tc">
+{if hasWx}
+<div data-action="10" data-type="10" class="item f-ib z-first">
+<div class="icon"></div>
+<p>点击使用微信验证</p>
+</div>
+{/if}
+{if hasQQ}
+<div data-action="5" data-type="5" class="item f-ib">
+<div class="icon"></div>
+<p>点击使用QQ验证</p>
+</div>
+{/if}
+</div>
+</textarea>
+<textarea name="ntp" id="m-question" style="display:none;"><div class="m-question">
+<div>请填写以下安全问题的答案</div>
+<div class="qa j-flag f-cb">
+<label class="f-fl">问题：</label>
+</div>
+<div class="qa f-cb">
+<label class="f-fl">回答：</label>
+<input type="text" class="u-txt txt f-fl j-flag">
+</div>
+<div class="u-err f-hide j-flag"><i class="u-icn u-icn-25"></i>帐号或密码错误</div>
+<div class="btnwrap">
+<a data-action="back" class="u-btn2 u-btn2-1 u-btn2-w2" hidefocus="true" href="javascript:void(0)"><i>上一步</i></a>
+<a data-action="next" class="u-btn2 u-btn2-2 u-btn2-w2" hidefocus="true" href="javascript:void(0)"><i>下一步</i></a>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="g-select" style="display:none;"><div class="u-slt f-ib">
+<span class="curr f-thide">－请选择－</span>
+<i class="btn"></i>
+<ul class="f-hide">
+</ul>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-linuxlinks" style="display:none;"><div class="lyct lyct-1">
+<div class="dc f-cb">
+<ul class="links">
+<li class="link f-cb">
+<a href="" class="right" target="_blank" hidefocus="true" title="Linux版下载">deepin15（64位）</a>
+<a href="" class="right" target="_blank" hidefocus="true" title="Linux版下载">ubuntu18.04（64位）</a>
+</li>
+</ul>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="ntp-pcRedirect" style="display:none;"><div class="lyct lyct-1">
+<div class="pcdld f-cb">
+<img src="../../../style/web2/img/down/uwpWindown.png" alt="网易云音乐-UWP版">
+<p class="txt">您的系统为Windows 10，推荐下载UWP版</p>
+<div class="choose">
+<a class="u-btn2 u-btn2-2" data-res-action="bilog" data-log-action="downloadapp" data-log-json='{"type":"pc","source":"downloadapp"}' href="https://www.microsoft.com/store/apps/9nblggh6g0jf" onclick="g_stat('uwp',true,event);_gaq.push(['_trackEvent','download','uwp','download']);" hidefocus="true" title="UWP版下载" target="_blank"><i>下载UWP版本</i></a>
+<a class="link" data-res-action="bilog" data-log-action="downloadapp" data-log-json='{"type":"pc","source":"downloadapp"}' href="https://music.163.com/api/pc/download/latest" onclick="g_stat('pc',true,event);_gaq.push(['_trackEvent','download','pc','download']);" hidefocus="true" title="PC版下载" target="_blank"><i>继续下载PC版本</i></a>
+</div>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="g-select-item" style="display:none;">{list options as o}
+<li class="f-thide" data-index="${o_index}"><a href="javascript:;">${o|filter}</a></li>
+{/list}
+</textarea>
+<textarea name="ntp" id="m-download-layer" style="display:none;"><h3 class="f-tc">使用云音乐客户端</h3>
+<h4 class="f-tc s-fc3">即可无限下载高品质音乐</h4>
+<div class="f-cb wrap">
+<div class="left">
+<div data-action="download" data-src="https://music.163.com/api/osx/download/latest" class="btn btn-mac"><i></i>Mac版<span class="ver j-flag">V1.9.1</span></div>
+<div data-action="download" data-src="https://music.163.com/api/pc/download/latest" class="btn f-hide"><i></i>PC版<span class="ver j-flag">V1.9.1</span></div>
+<div data-action="orpheus" class="btn btn-installed j-flag">已安装PC版</div>
+</div>
+<div class="right">
+<div class="qtcode"></div>
+<div class="s-fc3 f-tc">扫描下载手机版</div>
+</div>
+</div>
+</textarea>
+<textarea name="ntp" id="m-programtips-layer" style="display:none;"><div class="f-tc wrap ">
+<p class="f-fs1 s-fc1 wrap-p">该资源为付费内容，扫描下方二维码，使用最新的安卓或iPhone版本购买后即可畅享</p>
+<div class="f-tc wrap-d">
+<span class="qtcode j-flag"></span>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="com-artists-title" style="display:none;">{var title=""}
+{if artists && artists.length}
+{list artists as x}
+{if x}
+{var title = title + x.name}
+{if x_index < x_length - 1}
+{var title = title + " / "}
+{/if}
+{/if}
+{/list}
+{/if}
+${escape(title)}
+</textarea>
+<textarea name="jst" id="com-mv-artists" style="display:none;">{if artists && artists.length}
+<span class="${boxClazz}" title="${comJST('com-artists-title', artists)}">
+{list artists as x}
+{if !!x}
+{if !!x.id}
+<a href="/artist?id=${x.id}" class="${clazz}">${mark(escape(x.name))}</a>
+{else}
+<span class="${clazz}">${mark(escape(x.name))}</span>
+{/if}
+{if x_index < x_length - 1}&nbsp;/&nbsp;{/if}
+{/if}
+{/list}
+</span>
+{/if}
+</textarea>
+<textarea name="jst" id="com-album-artists" style="display:none;">${comJST('com-mv-artists', artists, clazz, mark, boxClazz)}
+</textarea>
+<textarea name="jst" id="com-user-type" style="display:none;">{if x.userType==4}${before}<sup class="${clazz2} u-icn2 u-icn2-music2 ${clazz}"></sup>${after}{elseif x.authStatus==1}${before}<sup class="u-icn u-icn-1 ${clazz}"></sup>${after}{elseif (x.expertTags && x.expertTags.length>0) || !isEmptyObject(x.experts)}${before}<sup class="u-icn u-icn-84 ${clazz}"></sup>${after}{/if}
+</textarea>
+<textarea name="ntp" id="ntp-portrait" style="display:none;"><div class="m-emts z-show">
+<div class="j-flag emtwrap f-cb"></div>
+<div class="page">
+<a href="#" hidefocus="true" class="j-flag u-btn u-btn-prv"></a><em class="j-flag s-fc3">1/2</em><a href="#" hidefocus="true" class="j-flag u-btn u-btn-nxt"></a>
+</div>
+</div>
+</textarea>
+<textarea name="jst" id="jst-portrait" style="display:none;">{list plist as item}
+<span title="${item.key}" class="emtitm"><img data-text="${item.key}" data-url="${item.key|purl}" class="f-alpha" src="${item.key|purl}"></span>
+{/list}
+</textarea>
+<textarea name="ntp" id="m-wgt-song-box" style="display:none;"><div class="j-flag"></div>
+<div class="j-flag"></div>
+</textarea>
+<textarea name="jst" id="m-wgt-song-list" style="display:none;"><table class="m-table {if type=='rank'}m-table-rank{/if}">
+<thead>
+<tr>
+<th class="first {if type=='rank'}wrk{else}w1{/if}"><div class="wp">&nbsp;</div></th>
+<th><div class="wp af0"></div></th>
+<th class="w2"><div class="wp af1"></div></th>
+<th class="w3"><div class="wp af2"></div></th>
+<th class="w4"><div class="wp af3"></div></th>
+</tr>
+</thead>
+<tbody>
+{list beg..end as y}
+{var x=xlist[y]}
+<tr id="${x.id|seed}" class="{if y%2==0}even{/if} {if disable(x)}js-dis{/if}">
+<td class="left">
+<div class="hd {if type=='rank'}rank{/if}">
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}">&nbsp;</span>
+<span class="num">${y+1}</span>
+{if type=='rank'}
+<div class="rk rk-1">
+{if x.lastRank>=0}
+{if y-x.lastRank>0}
+<span class="ico u-icn u-icn-74 s-fc10">${y-x.lastRank}</span>
+{elseif y-x.lastRank==0}
+<span class="ico u-icn u-icn-72 s-fc4">0</span>
+{else}
+<span class="ico u-icn u-icn-73 s-fc9">${x.lastRank-y}</span>
+{/if}
+{else}
+<span class="u-icn u-icn-75"></span>
+{/if}
+</div>
+{/if}
+</div>
+</td>
+<td class="">
+<div class="f-cb">
+<div class="tt">
+<div class="ttc">
+<span class="txt">
+{var alia=songAlia(x)}
+<a href="/song?id=${x.id}"><b title="${x.name|escape}{if alia} - (${alia|escape}){/if}">${soil(x.name)}</b></a>{if alia}<span title="${alia|escape}" class="s-fc8"> - (${soil(alia)})</span>{/if}
+{if x.mvid>0}
+<span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv">MV</span>
+{/if}
+</span>
+</div>
+</div>
+</div>
+</td>
+<td class=" s-fc3">
+<span class="u-dur {if canDel}candel{/if}">${dur2time(x.duration/1000)}{if x.ftype==2}<i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"></i>{/if}</span>
+<div class="opt hshow">
+<a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}></a>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"></span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享">分享</span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"></span>
+{if canDel}
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除">删除</span>
+{/if}
+</div>
+</td>
+<td class="">
+<div class="text" title="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}">
+${getArtistName(x.artists, '', '', false, false, true)}
+</div>
+</td>
+{if type=='dayRcmd'}
+<td class="hascls">
+<div class="f-pr">
+<div class="text">{if x.album}<a href="/album?id=${x.album.id}" title="${x.album.name}">${x.album.name}</a>{/if}</div>
+<a href="javascript:;" data-res-action="dislike" data-res-id="${x.id}" data-res-alg="${x.alg}" class="cls u-icn u-icn-80 f-tid icn-dislike" title="不感兴趣">不感兴趣</a>
+</div>
+</td>
+{else}
+<td class="">
+<div class="text">
+{if x.album}
+<a href="/album?id=${x.album.id}" title="${x.album.name|escape}">${soil(x.album.name)}</a>
+{/if}
+</div>
+</td>
+{/if}
+</tr>
+{/list}
+</tbody>
+</table>
+</textarea>
+<textarea name="jst" id="m-wgt-album-list" style="display:none;"><table class="m-table {if type=='rank'}m-table-rank{else}m-table-album{/if}">
+<thead>
+<tr>
+<th class="first {if type=='rank'}wrk{else}w1{/if}"><div class="wp">&nbsp;</div></th>
+<th><div class="wp">歌曲标题</div></th>
+<th class="w2-1"><div class="wp">时长</div></th>
+<th class="w4"><div class="wp">歌手</div></th>
+</tr>
+</thead>
+<tbody>
+{list beg..end as y}
+{var x=xlist[y]}
+<tr id="${x.id|seed}" class="{if y%2==0}even{/if} {if disable(x)}js-dis{/if}">
+<td class="left">
+<div class="hd {if type=='rank'}rank{/if}">
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}">&nbsp;</span>
+<span class="num">${y+1}</span>
+{if type=='rank'}
+<div class="rk rk-1">
+{if x.lastRank>=0}
+{if y-x.lastRank>0}
+<span class="ico u-icn u-icn-74 s-fc10">${y-x.lastRank}</span>
+{elseif y-x.lastRank==0}
+<span class="ico u-icn u-icn-72 s-fc4">0</span>
+{else}
+<span class="ico u-icn u-icn-73 s-fc9">${x.lastRank-y}</span>
+{/if}
+{else}
+<span class="u-icn u-icn-75"></span>
+{/if}
+</div>
+{/if}
+</div>
+</td>
+{if x.fee == 1}
+<td class="">
+<div class="f-cb">
+<div class="tt">
+<div class="ttc">
+<span class="txt">
+<i class="u-vip-icn"></i>
+{var alia=songAlia(x)}
+<a href="/song?id=${x.id}"><b title="${x.name|escape}{if alia} - (${alia|escape}){/if}">${soil(x.name)}</b></a>{if alia}<span title="${alia|escape}" class="s-fc8"> - (${soil(alia)})</span>{/if}
+{if x.mvid>0}
+<span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv">MV</span>
+{/if}
+</span>
+</div>
+</div>
+</div>
+</td>
+{else}
+<td class="">
+<div class="f-cb">
+<div class="tt">
+<div class="ttc">
+<span class="txt">
+{var alia=songAlia(x)}
+<a href="/song?id=${x.id}"><b title="${x.name|escape}{if alia} - (${alia|escape}){/if}">${soil(x.name)}</b></a>{if alia}<span title="${alia|escape}" class="s-fc8"> - (${soil(alia)})</span>{/if}
+{if x.mvid>0}
+<span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv">MV</span>
+{/if}
+</span>
+</div>
+</div>
+</div>
+</td>
+{/if}
+<td class=" s-fc3">
+<span class="u-dur {if canDel}candel{/if}">${dur2time(x.duration/1000)}{if x.ftype==2}<i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"></i>{/if}</span>
+<div class="opt hshow">
+<a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}></a>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"></span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享">分享</span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"></span>
+{if canDel}
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除">删除</span>
+{/if}
+</div>
+</td>
+<td class="">
+<div class="text" title="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}">
+${getArtistName(x.artists, '', '/', false, true, true)}
+</div>
+</td>
+</tr>
+{/list}
+</tbody>
+</table>
+</textarea>
+<textarea name="jst" id="m-wgt-song-top50-list" style="display:none;"><table class="m-table m-table-1 m-table-4">
+<tbody>
+{list beg..end as y}
+{var x=xlist[y]}
+<tr id="${x.id|seed}" class="{if y%2==0}even{/if} {if disable(x)}js-dis{/if}">
+<td class="w1">
+<div class="hd">
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}">&nbsp;</span>
+<span class="num">${y+1}</span>
+</div>
+</td>
+<td class="">
+<div class="f-cb">
+<div class="tt">
+<div class="ttc">
+<span class="txt">
+{var alia=songAlia(x)}
+<a href="/song?id=${x.id}"><b title="${x.name|escape}{if alia} - (${alia|escape}){/if}">${soil(x.name)}</b></a>{if alia}<span title="${alia|escape}" class="s-fc8"> - (${soil(alia)})</span>{/if}
+{if x.mvid>0}
+<span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv">MV</span>
+{/if}
+</span>
+</div>
+</div>
+</div>
+</td>
+<td class="w2-1 s-fc3">
+<span class="u-dur {if canDel}candel{/if}">${dur2time(x.duration/1000)}{if x.ftype==2}<i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"></i>{/if}</span>
+<div class="opt hshow">
+<a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}></a>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"></span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享">分享</span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"></span>
+{if canDel}
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除">删除</span>
+{/if}
+</div>
+</td>
+<td class="w4">
+<div class="text">
+{if x.album}
+{var transName = x.album.tns && x.album.tns.length > 0 ? x.album.tns[0] : ''}
+<a href="/album?id=${x.album.id}" title="${x.album.name|escape}{if transName} - (${transName|escape}){/if}">${soil(x.album.name)}</a>
+{if transName}
+<span title="${transName|escape}" class="s-fc8"> - (${transName|escape})</span>
+{/if}
+{/if}
+</div>
+</td>
+</tr>
+{/list}
+</tbody>
+</table>
+</textarea>
+<textarea name="jst" id="m-wgt-song-rank-list" style="display:none;"><table class="m-table m-table-rank">
+<thead>
+<tr>
+<th class="first w1"></th>
+<th><div class="wp">标题</div></th>
+<th class="w2-1"><div class="wp">时长</div></th>
+<th class="w3-1"><div class="wp">歌手</div></th>
+</tr>
+</thead>
+<tbody>
+{list beg..end as y}
+{var x=xlist[y]}
+<tr id="${x.id|seed}" class="{if y%2==0}even{/if} {if disable(x)}js-dis{/if}">
+{if y<3}
+<td>
+<div class="hd">
+<span class="num">${y+1}</span>
+<div class="rk ">
+{if x.lastRank>=0}
+{if y-x.lastRank>0}
+<span class="ico u-icn u-icn-74 s-fc10">${y-x.lastRank}</span>
+{elseif y-x.lastRank==0}
+<span class="ico u-icn u-icn-72 s-fc4">0</span>
+{else}
+<span class="ico u-icn u-icn-73 s-fc9">${x.lastRank-y}</span>
+{/if}
+{else}
+<span class="u-icn u-icn-75"></span>
+{/if}
+</div>
+</div>
+</td>
+<td class="rank">
+<div class="f-cb">
+<div class="tt">
+<a href="/song?id=${x.id}">{if x.album}<img class="rpic" src="${x.album.picUrl}?param=50y50&quality=100">{/if}</a>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}">&nbsp;</span>
+<div class="ttc">
+<span class="txt">
+{var alia=songAlia(x)}
+<a href="/song?id=${x.id}"><b title="${x.name|escape}{if alia} - (${alia|escape}){/if}">${soil(x.name)}</b></a>{if alia}<span title="${alia|escape}" class="s-fc8"> - (${soil(alia)})</span>{/if}
+{if x.mvid>0}
+<span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv">MV</span>
+{/if}
+</span>
+</div>
+</div>
+</div>
+</td>
+{else}
+<td>
+<div class="hd">
+<span class="num">${y+1}</span>
+<div class="rk ">
+{if x.lastRank>=0}
+{if y-x.lastRank>0}
+<span class="ico u-icn u-icn-74 s-fc10">${y-x.lastRank}</span>
+{elseif y-x.lastRank==0}
+<span class="ico u-icn u-icn-72 s-fc4">0</span>
+{else}
+<span class="ico u-icn u-icn-73 s-fc9">${x.lastRank-y}</span>
+{/if}
+{else}
+<span class="u-icn u-icn-75"></span>
+{/if}
+</div>
+</div>
+</td>
+<td class="">
+<div class="f-cb">
+<div class="tt">
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}">&nbsp;</span>
+<div class="ttc">
+<span class="txt">
+{var alia=songAlia(x)}
+<a href="/song?id=${x.id}"><b title="${x.name|escape}{if alia} - (${alia|escape}){/if}">${soil(x.name)}</b></a>{if alia}<span title="${alia|escape}" class="s-fc8"> - (${soil(alia)})</span>{/if}
+{if x.mvid>0}
+<span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv">MV</span>
+{/if}
+</span>
+</div>
+</div>
+</div>
+</td>
+{/if}
+<td class=" s-fc3">
+<span class="u-dur {if canDel}candel{/if}">${dur2time(x.duration/1000)}{if x.ftype==2}<i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"></i>{/if}</span>
+<div class="opt hshow">
+<a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}></a>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"></span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享">分享</span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"></span>
+{if canDel}
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除">删除</span>
+{/if}
+</div>
+</td>
+<td class="">
+<div class="text" title="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}">
+${getArtistName(x.artists, '', '', false, false, true)}
+</div>
+</td>
+</tr>
+{/list}
+</tbody>
+</table>
+</textarea>
+<textarea name="jst" id="m-wgt-song-pgm-list" style="display:none;"><table class="m-table m-table-prog">
+<tbody id="song-list">
+{list beg..end as y}
+{var x=xlist[y]}
+<tr id="${x.id|seed}" class="{if y%2!=0}even{/if} {if disable(x)}js-dis{/if}">
+<td class="first col1">
+<div class="hd">
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}">&nbsp;</span>
+<span class="num">${y+1}</span>
+</div>
+</td>
+<td class="col2">
+<div class="f-cb">
+<div class="tt">
+<div class="ttc">
+<span class="txt">
+{var alia=songAlia(x)}
+<a href="/song?id=${x.id}"><b title="${x.name|escape}{if alia} - (${alia|escape}){/if}">${soil(x.name)}</b></a>{if alia}<span title="${alia|escape}" class="s-fc8"> - (${soil(alia)})</span>{/if}
+{if x.mvid>0}
+<span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv">MV</span>
+{/if}
+</span>
+</div>
+</div>
+</div>
+</td>
+<td class="col3 s-fc3">
+<span class="u-dur {if canDel}candel{/if}">${dur2time(x.duration/1000)}{if x.ftype==2}<i title="歌曲来自第三方网站" class="migu u-icn2 u-icn2-14"></i>{/if}</span>
+<div class="opt hshow">
+<a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}></a>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"></span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享">分享</span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"></span>
+{if canDel}
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除">删除</span>
+{/if}
+</div>
+</td>
+<td class="col4">
+<div class="text" title="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}">
+${getArtistName(x.artists, '', '', false, false, true)}
+</div>
+</td>
+<td class="col5">
+<div class="text">
+{if x.album}
+<a href="/album?id=${x.album.id}" title="${x.album.name|escape}">${soil(x.album.name)}</a>
+{/if}
+</div>
+</td>
+</tr>
+{/list}
+</tbody>
+</table>
+</textarea>
+<textarea name="jst" id="m-wgt-song-listen" style="display:none;"> <ul>
+{list beg..end as y}
+{var x=xlist[y]}
+{if extData&&extData.limit&&y>=extData.limit}
+{break}
+{/if}
+{var from=getFrom()}
+<li id="${x.id|seed}" {if y%2 !=0 }class='even'{/if}>
+<div class="hd ">
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}">&nbsp;</span>
+<span class="num">${y+1}.</span>
+</div>
+<div class="song">
+<div class="tt">
+<div class="ttc">
+<span class="txt"><a href="/song?id=${x.id}"><b title="${x.name}">${x.name}</b></a>
+<span class='ar s-fc8'> <em>-</em>
+${getArtistName(x.artists, 's-fc8')}
+</span>
+</span>
+</div>
+</div>
+<div class="opt">
+<a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true" data-res-type="18" data-res-id="${x.id}" data-res-action="addto" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}></a>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="subscribe" class="icn icn-fav" title="收藏"></span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}" class="icn icn-share" title="分享">分享</span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载">下载</span>
+</div>
+</div>
+<div class="tops">
+<span class="bg" style='width:${x.score*100/x.max}%;'></span>
+{if extData.showCount&&x.playCount}<span class="times f-ff2">${x.playCount}次</span>{/if}
+</div>
+</li>
+{/list}
+</ul>
+{if extData&&extData.limit&&xlist.length>extData.limit}
+<div class="more">
+<a href="/user/songs/rank?id=${hostId}" >查看更多&gt;</a>
+</div>
+{/if}
+</textarea>
+<textarea name="jst" id="m-wgt-purchased-song-list" style="display:none;"> {list beg..end as y}
+{var x=xlist[y]}
+<tr id="${x.id|seed}" class="{if y%2==1}even{/if} {if disable(x)}js-dis{/if}">
+<td class="left">
+<div class="hd {if type=='rank'}rank{/if}">
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="play" {if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if} class="ply {if isPlaying(x)}ply-z-slt{/if}">&nbsp;</span>
+<span class="num">${y+1}</span>
+{if type=='rank'}
+<div class="rk rk-1">
+{if x.lastRank>=0}
+{if y-x.lastRank>0}
+<span class="ico u-icn u-icn-74 s-fc10">${y-x.lastRank}</span>
+{elseif y-x.lastRank==0}
+<span class="ico u-icn u-icn-72 s-fc4">0</span>
+{else}
+<span class="ico u-icn u-icn-73 s-fc9">${x.lastRank-y}</span>
+{/if}
+{else}
+<span class="u-icn u-icn-75"></span>
+{/if}
+</div>
+{/if}
+</div>
+</td>
+<td class="u-hasopt">
+<div class="f-cb">
+<div class="tt">
+<div class="ttc">
+<span class="txt">
+{var alia=songAlia(x)}
+<a href="/song?id=${x.id}"><b title="${x.name|escape}{if alia} - (${alia|escape}){/if}">${soil(x.name)}</b></a>{if alia}<span title="${alia|escape}" class="s-fc8"> - (${soil(alia)})</span>{/if}
+{if x.mvid>0}
+<span data-res-id="${x.id}" data-res-action="mv" title="播放mv" class="mv">MV</span>
+{/if}
+</span>
+</div>
+</div>
+<div class="opt hshow">
+<a class="u-icn u-icn-81 icn-add" href="javascript:;" title="添加到播放列表" hidefocus="true"
+data-res-type="18"
+data-res-id="${x.id}"
+data-res-action="addto"
+{if from}data-res-from="${from.fid}" data-res-data="${from.fdata}"{/if}></a>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="fav" class="icn icn-fav" title="收藏"></span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="share" data-res-name="${x.name}" data-res-author="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}" {if x.album}data-res-pic="${x.album.picUrl}"{/if} class="icn icn-share" title="分享">分享</span>
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="download" class="icn icn-dl" title="下载"></span>
+{if canDel}
+<span data-res-id="${x.id}" data-res-type="18" data-res-action="delete" class="icn icn-del" title="删除">删除</span>
+{/if}
+</div>
+</div>
+</td>
+<td class="">
+<div class="text" title="{list x.artists as art}${art.name}{if art_index<x.artists.length-1}/{/if}{/list}">
+${getArtistName(x.artists, '', '', false, false, true)}
+</div>
+</td>
+<td class="">
+<div class="text">
+{if x.album}
+<a href="/album?id=${x.album.id}" title="${x.album.name|escape}">${soil(x.album.name)}</a>
+{/if}
+</div>
+</td>
+<td class="s-fc3">${formatTime(x.paidTime)}</td>
+</tr>
+{/list}
+</textarea>
+<textarea name="ntp" id="m-msg-private-send" style="display:none;"><div class="lyct lyct-1 f-cb">
+<div class="m-lyshare m-plshare">
+<div class="u-err j-flag" style="display: none;">最多选择10位好友</div>
+<div class="item item-1 f-cb">
+<label>发 给：</label>
+<div class="ct f-pr j-flag">
+</div>
+</div>
+<div class="item f-cb">
+<label>内 容：</label>
+<div class="ct j-flag">
+</div>
+</div>
+</div>
+</div>
+</textarea>
+</div>
+<script src="//s3.music.126.net/web/s/core_f69144c2b48477f5876181fd34c470c1.js?f69144c2b48477f5876181fd34c470c1" type="text/javascript"></script><script src="//s3.music.126.net/web/s/pt_discover_toplist_b26215d7eec459525ceb3b703ee5f48a.js?b26215d7eec459525ceb3b703ee5f48a" type="text/javascript"></script>
+</body>
+<script type="text/javascript">
+var _gaq=_gaq||[];
+_gaq.push(['_setAccount','UA-38766552-1'],['_setLocalGifPath','/UA-38766552-1/__utm.gif'],['_setLocalRemoteServerMode']);
+_gaq.push(['_trackPageview']);
+//fix ipad下的一个bug
+if (navigator.userAgent.indexOf('iPad') != -1) {
+iframeHeight = Math.max(
+Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
+Math.max(document.body.offsetHeight, document.documentElement.offsetHeight),
+Math.max(document.body.clientHeight, document.documentElement.clientHeight)
+);
+top.document.body.style.height = iframeHeight + 20 + 'px';
+}</script>
+</html>
